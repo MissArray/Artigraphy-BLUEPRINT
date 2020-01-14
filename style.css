@@ -1,0 +1,448 @@
+/* For effects, see https://tympanus.net/Tutorials/CreativeCSS3AnimationMenus/index2.html */
+
+/* For the CSS target: selector technique, see also: https://developer.mozilla.org/en-US/docs/Web/CSS/:target*/
+
+/*
+TYPE SCALE: Major Second 1.125
+running text: 1em
+navbar links: 1.125em
+h1 {font-size: 1.802em;}
+h2 {font-size: 1.602em;}
+h3 {font-size: 1.424em;}
+h4 {font-size: 1.266em;}
+h5 {font-size: 1.125em;}
+small, .text_small {font-size: 0.889em;}
+*/
+
+
+:root {
+  --accent-colour1: #ff9175;
+  --bodytext: 'Raleway', Arial, sans-serif;
+  --medium-text: 'Raleway Medium', Arial, Helvetica, sans-serif;
+  --semibold-text: 'Raleway Semibold', Arial, sans-serif;
+  --main-bckg-colour: 	mintcream;
+  --bckg-colour-darker1: #91e8cb;
+  --bckg-colour-darker2: #89d9be;
+  --linkcolour-unv: #3c3d3e;      /*Baltic Sea, balticsea*/
+  --main-txt-colour: #3c3d3e;
+  --main-txt-bckg: #BDF1DF;
+  --sliding-menu-bckg: #F49D69;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: 
+    local('Raleway'),
+    url('Assets/Fonts/Raleway-Regular.ttf'),
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src:
+  local('Raleway-Medium'),
+  url('Assets/Fonts/Raleway-Medium.ttf'),
+  format('truetype');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src:
+  local('Raleway-SemiBold'),
+  url('Assets/Fonts/Raleway-SemiBold.ttf'),
+  format('truetype');
+}
+
+@font-face {
+  font-family: 'Segoe';
+  src:
+  local('Segoe MDL2 Assets'),
+  url('Assets/Fonts/segmdl2.ttf'),
+  format('truetype');
+}
+
+.icon-font {
+  font-family: 'Segoe MDL2 Assets', Arial, sans-serif;
+}
+
+/*----- MOBILE FIRST ----*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  font-family: var(--bodytext, Arial, Helvetica, sans-serif);
+  font-size: calc(12px + 0.4vw);
+  background-color: var(--main-bckg-colour);
+}
+
+header, footer {
+  width: 100vw;
+}
+
+header {
+  display: flex;
+  height: 10vh;
+  margin-bottom: 15px;
+  background-color: var(--main-bckg-colour);
+}
+
+/* Shift sidebar to bottom of mobile screen. */
+
+#sidebar {
+  grid-column: span 12;
+  grid-row: 3 / 4;
+  background-color: var(--main-bckg-colour);
+}
+
+/* Add a fixed-height row for sidebar. */
+main {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 75px auto 5vh;
+  height: 50vh;
+}
+
+main > div {
+  margin: 5px;
+  padding: 15px;
+}
+
+#main-left-t {
+  grid-column: 2 / 10;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bckg-colour-darker2);
+  border-radius: 15px 0;
+}
+
+#main-centre-t {
+  grid-column: 10 / 12;
+  grid-row: 1 / 2;
+  background-color: var(--bckg-colour-darker1);
+  border-radius: 15px 0;
+}
+
+#main-text {
+  grid-column: 2 / 12;
+  grid-row: 2 / 3;
+  background-color: var(--main-txt-bckg);
+  font-family: var(--bodytext);
+  color: var(--main-txt-colour);
+  border-radius: 15px 0;
+}
+
+footer {
+  height: 5vh;
+  margin-top: 25px;
+  flex-shrink: 0;
+  background-color: lightseagreen;
+}
+
+/*-------NAVBAR: MOBILE FIRST------*/
+
+/* .backdrop {
+  background-color: 	#FFB984;
+} */
+
+/* Screen reader only */
+.scr-read-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  
+  /* MENU BUTTON - MOBILE */
+
+   .menu-toggle {
+    display: inline-block;
+    padding: 0.25em 20px;
+    font-size: 2em;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .menu-toggle:hover,
+  .menu-toggle:focus {
+    color: #e9632f;
+  }
+  
+  
+  /*
+   nav {
+    max-width: 100vw;
+    margin-bottom: 5px;
+    background-color: lavender;
+}
+  */
+  .navbar {
+    position: absolute;
+    display: none;
+    left: -200px;
+    top: 0;
+    height: 100%;
+      /* overflow-y: scroll;   ---In original example, this produces unsightly vertical scroll*/
+      overflow-x: visible;
+      transition: left 0.3s ease, box-shadow 0.3s ease;
+      z-index: 999;
+  }
+  
+#navbar-close {
+  font-size: 1.5em;
+  background-color: #f7ad82;
+  border-radius: 50%;
+  padding: 0.4em 0.5em;
+  margin: 4px;
+}
+
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 2.5em 0 0;
+    /* Hide shadow w/ -8px while 'closed' */
+    -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+       -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+            box-shadow: -8px 0 8px rgba(0,0,0,.5);
+    min-height: 100%;
+    width: 70vw;
+    background-color: var(--sliding-menu-bckg);
+  }
+  
+  .navbar a {
+    display: block;
+    padding: .75em 15px;
+    line-height: 1em;
+    font-family: var(--medium-text, Arial, Helvetica, sans-serif);
+    font-size: 1em;
+    color: var(--linkcolour-unv);
+    text-decoration: none;
+    /* border-bottom: 1px solid #383838; */
+  }
+  
+  .navbar li:first-child a {
+    /* border-top: 1px solid #383838; */
+    margin-top: 1.5em;
+  }
+  
+  /* .navbar a:hover,
+  .navbar a:focus {
+    background: #333;
+    text-decoration: underline;
+  } */
+
+  /*---- ANIMATE LINK UNDERLINE ----*/
+  /* Add the 2nd class .animate-underline to the respective links */
+
+a.animate-underline {
+	position: relative;
+}
+
+/* Create underline with a pseudoclass. 
+Set width to 100% to cover span the link text.
+Set visibility to 'hidden' for the underline's default state.
+ */
+
+a.animate-underline:before {
+position: absolute;
+content: '';
+width: 100%;
+height: 3px;
+bottom: 0;
+left: 0;
+visibility: hidden;
+background-color: var(--accent-colour1);
+transform: scaleX(0);
+transition: all 0.4s ease-in-out;
+}
+
+/* Set visibility to 'visible' on 'hover' and 'focus' */
+
+a.animate-underline:hover:before, a.animate-underline:focus:before {
+	visibility: visible;
+	transform: scaleX(1);
+}
+  
+  .navbar .menu-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  /* Acc. to Medium article, target: pseudo-class is semantically superior to using checkboxes to open/close menu.
+  */
+  .navbar:target,
+  .navbar[aria-expanded="true"] {
+    display: block;
+    left: 0;
+    outline: none;
+    -moz-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+    -webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+    box-shadow: 3px 0 12px rgba(0,0,0,.25);
+  }
+  
+  /*Clicking 'close' button OR anywhere in backdrop closes the sliding menu.*/
+  .navbar:target .menu-close,
+  .navbar[aria-expanded="true"] .menu-close {
+    z-index: 1001;
+  }
+  
+  .navbar:target ul,
+  .navbar[aria-expanded="true"] ul {
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .navbar:target + .backdrop,
+  .navbar[aria-expanded="true"] + .backdrop{
+    position: absolute;
+    display: block;  
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    background: rgba(52, 124, 128, 0.71);
+    cursor: default;
+  }
+  
+
+/*---- HEADINGS ----*/
+
+h1 {
+  font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
+  font-size: 1.802em;
+  margin: 10px 9vw 10px auto;
+}
+
+h2 {
+  font-family: var(--medium-text, Arial, Helvetica, sans-serif);
+  font-size: 1.602em;
+}
+
+h3 {
+  font-family: var(--medium-text, Arial, Helvetica, sans-serif);
+  font-size: 1.424em;
+}
+
+  @supports (position: fixed) {
+    .navbar,
+    .navbar:target + .backdrop,
+    .navbar[aria-expanded="true"] + .backdrop
+    {
+      position: fixed;
+    }
+  }
+  
+
+  /* ------ MEDIA QUERIES: LARGE SCREENS ------  */
+
+  @media (min-width: 768px) {
+
+        
+    .menu-toggle, .navbar .menu-close {
+      display: none;
+    }
+
+    header {
+      display: flex;
+      flex-direction: row;
+    }
+    
+   /*DISPLAY MENU*/
+    .navbar {
+      position: relative;
+          left: auto;
+          top: auto;
+          height: auto;
+      display: block;
+    }
+    
+    .navbar ul {
+      display: flex;
+      padding: 0;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      height: auto;
+      width: auto;
+      background-color: var(--main-bckg-colour);
+      }
+    
+    .navbar a {
+      font-size: 1em;
+      color: var(--linkcolour-unv);
+      border: 0 !important; 
+    }
+    
+    .navbar a:hover,
+    .navbar a:focus {
+      color: var(--linkcolour-unv);
+      font-size: 110%;
+    }
+
+    #navlist li {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 0.75em;
+  }
+
+
+  .navbar li:first-child a {
+      margin-top: 0;
+  }
+
+  /*--- MAIN STYLING FOR LARGE SCREENS ---*/
+
+  #sidebar {
+    grid-column: 12 / 13;
+    grid-row: 1 / 3;
+    background-color: var(--main-bckg-colour);
+  }
+  
+  
+  main {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 75px auto;
+    height: 50vh;
+  }
+  
+  main > div {
+    margin: 5px;
+    padding: 20px;
+  }
+  
+  #main-left-t {
+    grid-column: 2 / 8;
+    grid-row: 1 / 2;
+    
+  }
+  
+  #main-centre-t {
+    grid-column: 8 / 12;
+    grid-row: 1 / 2;
+  }
+  
+  #main-text {
+    grid-column: 2 / 12;
+    grid-row: 2 / 3;
+  }
+
+  h1 {
+    margin: 10px 40px auto 20px;
+  }
+
+}
