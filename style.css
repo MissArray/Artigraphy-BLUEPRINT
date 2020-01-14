@@ -1,7 +1,7 @@
 /* For effects, see https://tympanus.net/Tutorials/CreativeCSS3AnimationMenus/index2.html */
 
 /* For the CSS target: selector technique, see also: https://developer.mozilla.org/en-US/docs/Web/CSS/:target*/
-
+/* Possibly restyle lists when ::marker pseudoelement gains wider browser support. */
 /*
 TYPE SCALE: Major Second 1.125
 running text: 1em
@@ -23,6 +23,8 @@ small, .text_small {font-size: 0.889em;}
   --main-bckg-colour: 	mintcream;
   --bckg-colour-darker1: #91e8cb;
   --bckg-colour-darker2: #89d9be;
+  --list-marker-colour-even: rgb(0, 181, 226);
+  --list-marker-colour-odd: #1492a8;
   --linkcolour-unv: #3c3d3e;      /*Baltic Sea, balticsea*/
   --main-txt-colour: #3c3d3e;
   --main-txt-bckg: #BDF1DF;
@@ -77,7 +79,7 @@ body {
   font-family: var(--bodytext, Arial, Helvetica, sans-serif);
   font-size: calc(12px + 0.4vw);
   background-color: var(--main-bckg-colour);
-}
+ }
 
 header, footer {
   width: 100vw;
@@ -98,8 +100,12 @@ header {
   background-color: var(--main-bckg-colour);
 }
 
-/* Add a fixed-height row for sidebar. */
+/*
+--Add a fixed-height row for sidebar to the grid of 'main.
+--ESSENTIAL: add flex: 1 to 'main' to ensure the footer is sticky.
+*/
 main {
+  flex: 1;
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -107,7 +113,7 @@ main {
   height: 50vh;
 }
 
-main > div {
+main > div, section {
   margin: 5px;
   padding: 15px;
 }
@@ -140,7 +146,6 @@ main > div {
 
 footer {
   height: 5vh;
-  margin-top: 25px;
   flex-shrink: 0;
   background-color: lightseagreen;
 }
@@ -344,6 +349,29 @@ h3 {
     }
   }
   
+  /* ----- LISTS - EXCEPTING NAVBAR ----- */
+
+.plain-list li:nth-child(even) {
+  color: var(--list-marker-colour-even);
+}
+
+.plain-list li:nth-child(odd) {
+  color: var(--list-marker-colour-odd);
+}
+
+.plain-list span {
+  color: var( --main-txt-colour);
+}
+
+dt {
+  font-weight: 500;
+}
+
+dd {
+  margin-bottom: 0.3rem;
+}
+
+
 
   /* ------ MEDIA QUERIES: LARGE SCREENS ------  */
 
