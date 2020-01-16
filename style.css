@@ -1,6 +1,7 @@
 /* For effects, see https://tympanus.net/Tutorials/CreativeCSS3AnimationMenus/index2.html */
 
 /* For the CSS target: selector technique, see also: https://developer.mozilla.org/en-US/docs/Web/CSS/:target*/
+/* For the CSS accordion with the checkbox hack: https://code-boxx.com/simple-responsive-accordion-pure-css/*/
 /* Possibly restyle lists when ::marker pseudoelement gains wider browser support. */
 /*
 TYPE SCALE: Major Second 1.125
@@ -137,13 +138,59 @@ main > div, section {
   border-radius: 15px 0;
 }
 
-#main-text {
+.main-text {
+  flex: 1;            /* Add to keep footer to bottom of page*/
   grid-column: 2 / 12;
   grid-row: 2 / 3;
   background-color: var(--basic-txt-bckg, wheat);
   font-family: var(--bodytext);
   color: var(--basic-txt-colour, darkslategray);
   border-radius: 15px 0;
+}
+
+/*--- ACCORDION TEXT ---*/
+.accordion-text {
+  grid-column: 2 /12;
+  grid-row: 3 / 4;
+  background-color: var(--basic-txt-bckg, wheat);
+  font-family: var(--bodytext);
+  color: var(--basic-txt-colour, darkslategray);
+  border-radius: 15px 0;
+}
+
+.accordion-item {
+  position: relative;
+  margin: 4px;
+}
+
+.accordion-item label {
+  display: block;
+  background: blueviolet;
+  color: greenyellow;
+  padding: 0.25em;
+  cursor: pointer;
+}
+
+.accordion-item label::after {
+  display: block;
+  content:'-';
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  transition: all 0.5s;
+}
+
+.accordion-item input {
+  display: none;
+}
+
+.accordion-item input:checked ~ .acc-item-content {
+  display: block;
+}
+
+.acc-item-content {
+  display: none;
+  overflow: hidden;
 }
 
 footer {
@@ -457,7 +504,7 @@ dd {
     grid-row: 1 / 2;
   }
   
-  #main-text {
+  .main-text {
     grid-column: 2 / 12;
     grid-row: 2 / 3;
   }
