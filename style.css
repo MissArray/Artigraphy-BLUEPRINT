@@ -29,8 +29,8 @@ small, .text_small {font-size: 0.889em;}
   --list-marker-colour-odd: #14a2c3;
   --linkcolour-unv: #3c3731;     /*blackpepper*/
   --basic-txt-colour: #362d26;  /*coffeebean*/
-  --basic-txt-bckg: #E2D0B3;
-  --sliding-menu-bckg: #D7C6AD;
+  --basic-txt-bckg: #E2D0B3;    /*Alternative: Crayola almond #EED9C4; dairycream #edd2a4; raffia #ebc695; #d5bf8e; */
+  --sliding-menu-bckg: burlywood;
 }
 
 @font-face {
@@ -98,20 +98,21 @@ header {
 
 #sidebar {
   grid-column: span 12;
-  grid-row: 3 / 4;
+  grid-row: 4 / 5;
   background-color: var(--basic-bckg-colour);
 }
 
 /*
 --Add a fixed-height row for sidebar to the grid of 'main.
 --ESSENTIAL: add flex: 1 to 'main' to ensure the footer is sticky.
+-- Where >2 text boxes, adjust number of grid-template-rows, adding a further 'auto'
 */
 main {
   flex: 1;
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 75px auto 5vh;
+  grid-template-rows: 75px auto auto 5vh;    
   height: 50vh;
   margin-bottom: 0.25em;
 }
@@ -148,8 +149,9 @@ main > div, section {
   border-radius: 15px 0;
 }
 
-/*--- ACCORDION TEXT ---*/
+/*--- ACCORDION for TEXT ---*/
 .accordion-text {
+  flex: 1;
   grid-column: 2 /12;
   grid-row: 3 / 4;
   background-color: var(--basic-txt-bckg, wheat);
@@ -160,24 +162,32 @@ main > div, section {
 
 .accordion-item {
   position: relative;
-  margin: 4px;
+  margin: 0 0.2em 0.3em 0;
 }
 
 .accordion-item label {
   display: block;
-  background: blueviolet;
-  color: greenyellow;
+  font-family: var(--semibold-text);
+  color: var(--basic-txt-colour);
   padding: 0.25em;
   cursor: pointer;
 }
 
 .accordion-item label::after {
   display: block;
-  content:'-';
+  content: '\022c1'; /* content:'\022c1' or '\0039b'  */
   position: absolute;
-  right: 20px;
-  top: 20px;
-  transition: all 0.5s;
+  right: 10px;
+  top: 0px;
+  background-color: burlywood;
+  padding: 2px 6px;
+  border-radius: 5px 0;
+  transition: all 0.3s;
+}
+
+.accordion-item input[type=checkbox]:checked + label::after {
+  transform: rotate(180deg);
+  background-color: var(--bckg-colour-darker1);
 }
 
 .accordion-item input {
@@ -481,11 +491,11 @@ dd {
   
   
   main {
+    flex: 1;
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 75px auto;
-    height: 50vh;
   }
   
   main > div {
@@ -507,6 +517,10 @@ dd {
   .main-text {
     grid-column: 2 / 12;
     grid-row: 2 / 3;
+  }
+
+  .accordion-text {
+    grid-column: 2 / 12;
   }
 
   h1 {
