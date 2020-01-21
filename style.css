@@ -117,9 +117,14 @@ main {
   margin-bottom: 0.25em;
 }
 
-main > div, section {
+main > div {
   margin: 5px;
   padding: 15px;
+}
+
+section {
+margin: 5px;
+padding: 15px;
 }
 
 #main-left-t {
@@ -128,7 +133,7 @@ main > div, section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--bckg-colour-darker2, aqua);
+  background-color: var(--bckg-colour-darker2, darkturquoise);
   border-radius: 15px 0;
 }
 
@@ -144,64 +149,101 @@ main > div, section {
   grid-column: 2 / 12;
   grid-row: 2 / 3;
   background-color: var(--basic-txt-bckg, wheat);
-  font-family: var(--bodytext);
+  font-family: var(--bodytext, Arial, Helvetica, sans-serif);
   color: var(--basic-txt-colour, darkslategray);
   border-radius: 15px 0;
 }
 
-/*--- ACCORDION for TEXT ---*/
-.accordion-text {
+/*--- ACCORDION LIST ---*/
+/* Originally tried using the 'content' property for the up/down arrow; however, screen-readers don't pick up the 'content' property at all, hence the span-within-the-label solution*/
+.accordion-wrapper {
   flex: 1;
-  grid-column: 2 /12;
+  grid-column: 2 / 12;
   grid-row: 3 / 4;
+  list-style: none;   /* none outside*/
+  margin: 5px;
+  padding: 15px;
   background-color: var(--basic-txt-bckg, wheat);
-  font-family: var(--bodytext);
+  font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
   color: var(--basic-txt-colour, darkslategray);
   border-radius: 15px 0;
 }
 
-.accordion-item {
-  position: relative;
-  margin: 0 0.2em 0.3em 0;
-}
-
-.accordion-item label {
+.accordion-item-heading {
   display: block;
-  font-family: var(--semibold-text);
-  color: var(--basic-txt-colour);
-  padding: 0.25em;
+  position: relative;
+  font-size: 1.266em;
   cursor: pointer;
 }
 
-.accordion-item label::after {
+.accordion-item {
+  padding: 0;
+  margin: 0;
+ }
+
+/*Hide the checkbox*/
+.accordion-item-input {
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1;
+	overflow: hidden;
+	position: absolute;
+	left: -9999px;
+}
+
+.accordion-item-input:checked ~ .accordion-item-text {
+	background-color: violet;
+	padding: 15px;
+	max-height: 1000px;
+  padding-top: 1em;
+  margin: 0.75em 0;
+  border-radius: 15px 0;
+	-webkit-transition: max-height 0.15s ease-in, margin 0.15s ease-in, padding 0.15s ease-in;
+	transition: max-height 0.15s ease-in, margin 0.15s ease-in, padding 0.15s ease-in;
+}
+
+/* Match accordion-item-headings only when they follow and are siblings of an accordion-item-input that is checked.*/
+
+.accordion-item-input:checked ~ .accordion-item-heading > .acc-item-arrow {
+	-webkit-transform: rotate(0);
+	  -ms-transform: rotate(0);
+	   transform: rotate(0);
+}
+
+.acc-item-arrow {
   display: block;
-  content: '\022c1'; /* content:'\022c1' or '\0039b'  */
   position: absolute;
-  right: 10px;
-  top: 0px;
-  background-color: burlywood;
-  padding: 2px 6px;
+  right: 0;
+  top: -0.3em;
+  padding: 5px 6px;
   border-radius: 5px 0;
-  transition: all 0.3s;
+  font-family: 'Segoe MDL2 Assets';
+  background-color: burlywood;
+  -webkit-transition: -webkit-transform .25s ease;
+  transition: transform .25s ease;
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 
-.accordion-item input[type=checkbox]:checked + label::after {
-  transform: rotate(180deg);
-  background-color: var(--bckg-colour-darker1);
+.acc-item-arrow:hover, .acc-item-arrow:active {
+  background-color: var(--bckg-colour-darker2, darkturquoise);
 }
 
-.accordion-item input {
-  display: none;
-}
-
-.accordion-item input:checked ~ .acc-item-content {
-  display: block;
-}
-
-.acc-item-content {
-  display: none;
+.accordion-item-text {
   overflow: hidden;
+  max-height: 0;
+  margin-bottom: 0;
+  font-family: var(--bodytext, Arial, Helvetica, sans-serif);
+  -webkit-transition: max-height .15s ease-out, margin-bottom .15s ease-out, padding .15s ease-out;
+	-moz-transition: max-height .15s ease-out, margin-bottom .15s ease-out, padding .15s ease-out;
+	-o-transition: max-height .15s ease-out, margin-bottom .15s ease-out, padding .15s ease-out;
+	transition: max-height .15s ease-out, margin-bottom .15s ease-out, padding .15s ease-out;
 }
+
 
 footer {
   height: 5vh;
@@ -388,6 +430,7 @@ h2 {
 h3 {
   font-family: var(--medium-text, Arial, Helvetica, sans-serif);
   font-size: 1.424em;
+  margin: 0;
 }
 
   @supports (position: fixed) {
@@ -519,10 +562,7 @@ dd {
     grid-row: 2 / 3;
   }
 
-  .accordion-text {
-    grid-column: 2 / 12;
-  }
-
+  
   h1 {
     margin: 10px 40px auto 20px;
   }
