@@ -17,6 +17,7 @@ small, .text_small {font-size: 0.889em;}
 
 
 :root {
+  /*COLOURS*/
   --accent-colour1: #70D9F1;
   --accent-colour2: #CA9171;
   --bodytext: 'Raleway', Arial, sans-serif;
@@ -30,7 +31,17 @@ small, .text_small {font-size: 0.889em;}
   --linkcolour-unv: #3c3731;     /*blackpepper*/
   --basic-txt-colour: #362d26;  /*coffeebean*/
   --basic-txt-bckg: #E2D0B3;    /*Alternative: Crayola almond #EED9C4; dairycream #edd2a4; raffia #ebc695; #d5bf8e; */
+  --basic-txt-bckg1: #fbae7a;
   --sliding-menu-bckg: burlywood;
+  /*TEXT SIZES*/
+  --bodytext-size: 1em;
+  --navbar-link-size: 1.125em;
+  --h1-font-size: 1.802em;
+  --h2-font-size: 1.602em;
+  --h3-font-size: 1.424em;
+  --h4-font-size: 1.266em;
+  --h5-font-size: 1.125em;
+  --small-text: 0.889em;
 }
 
 @font-face {
@@ -112,7 +123,7 @@ main {
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 75px auto auto 5vh;    
+  grid-template-rows: 75px auto auto auto 5vh;    
   height: 50vh;
   margin-bottom: 0.25em;
 }
@@ -127,7 +138,7 @@ margin: 5px;
 padding: 15px;
 }
 
-#main-left-t {
+.main-left-t {
   grid-column: 2 / 10;
   grid-row: 1 / 2;
   display: flex;
@@ -137,7 +148,7 @@ padding: 15px;
   border-radius: 15px 0;
 }
 
-#main-centre-t {
+.main-centre-t {
   grid-column: 10 / 12;
   grid-row: 1 / 2;
   background-color: var(--bckg-colour-darker1, turquoise);
@@ -244,6 +255,62 @@ padding: 15px;
 	transition: max-height .15s ease-out, margin-bottom .15s ease-out, padding .15s ease-out;
 }
 
+/*---ACCESSIBLE & RESPONSIVE TABLE---*/
+.table-wrapper {
+  flex: 1;
+  grid-column: 2 / 12;
+  grid-row: 4 / 5;
+  margin: 5px;
+  padding: 15px;
+  background-color: var(--basic-txt-bckg, wheat);
+  font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
+  color: var(--basic-txt-colour, darkslategray);
+  border-radius: 15px 0;
+  overflow: auto;
+}
+
+table {
+  margin: 1em auto;
+}
+
+table caption {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1em;
+  padding: 15px;
+  background-color: var(--bckg-colour-darker1);
+  border-radius: 15px 0;
+}
+
+th {
+  background-color: tan;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+table, th, td {
+  border: 2px;
+  border-spacing: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: antiquewhite;
+}
+
+/*Combine both rules to prevent header from being styled as an odd row.*/
+tr:nth-child(odd):not(:first-child) {
+  background-color: var(--basic-txt-bckg2,linen);
+}
+
+td {
+  padding: 8px 16px 8px 24px;
+}
+
+#blank-row > td {
+  border-collapse: collapse;
+  background-color: var(--basic-txt-bckg, wheat);
+}
+
+/*---FOOTER---*/
 
 footer {
   height: 5vh;
@@ -418,18 +485,18 @@ a.animate-underline:hover:before, a.animate-underline:focus:before {
 
 h1 {
   font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
-  font-size: 1.802em;
+  font-size: var(--h1-font-size);
   margin: 10px 9vw 10px auto;
 }
 
 h2 {
   font-family: var(--medium-text, Arial, Helvetica, sans-serif);
-  font-size: 1.602em;
+  font-size: var(--h2-font-size);
 }
 
 h3 {
   font-family: var(--medium-text, Arial, Helvetica, sans-serif);
-  font-size: 1.424em;
+  font-size: var(--h3-font-size);
   margin: 0;
 }
 
@@ -546,13 +613,13 @@ dd {
     padding: 20px;
   }
   
-  #main-left-t {
+  .main-left-t {
     grid-column: 2 / 8;
     grid-row: 1 / 2;
     
   }
   
-  #main-centre-t {
+  .main-centre-t {
     grid-column: 8 / 12;
     grid-row: 1 / 2;
   }

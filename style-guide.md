@@ -10,3 +10,14 @@
 - SLIDING MENU / BACKDROP: #386C78 - shade of Pantone Formula Guide Uncoated #70D9F1 [base turquoise]
 - LIST BULLET COLOUR - EVEN: #1295b4 - shade of Pantone Formula Guide Uncoated #70D9F1 [base turquoise]
 - LIST BULLET COLOUR - ODD: #14a2c3 - shade of Pantone Formula Guide Uncoated #70D9F1 [base turquoise]
+
+## TEXT SIZES
+### TYPE SCALE: Major Second 1.125
+- running text: 1em
+- navbar links: 1.125em
+- h1 {font-size: 1.802em;}
+- h2 {font-size: 1.602em;}
+- h3 {font-size: 1.424em;}
+- h4 {font-size: 1.266em;}
+- h5 {font-size: 1.125em;}
+- small, .text_small {font-size: 0.889em;}
