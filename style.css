@@ -38,8 +38,8 @@ small, .text_small {font-size: 0.889em;}
   --basic-txt-bckg-lgt2: #EBDFCA;
   --sliding-menu-bckg: #ddc8a3;
   /*COLOURS - TEXT*/
-  --linkcolour-unv: #272522;     /*blackpepper*/
-  --basic-txt-colour: #362d26;  /*coffeebean*/
+  --linkcolour-unv: #1f1812;     /*shade of cocoabrown #35281e*/
+  --basic-txt-colour: #1f1812;  /*shade of cocoabrown #35281e*/
   /*TEXT SIZES*/
   --bodytext-size: 1em;
   --navbar-link-size: 1.125em;
@@ -270,7 +270,6 @@ padding: 15px;
   margin: 5px;
   padding: 15px;
   background-color: var(--basic-txt-bckg, wheat);
-  font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
   color: var(--basic-txt-colour, darkslategray);
   border-radius: 15px 0;
   overflow: auto;
@@ -281,6 +280,7 @@ table {
 }
 
 table caption {
+  font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
   font-size: var(--h3-font-size);
   margin-bottom: 1em;
   padding: 15px;
@@ -289,6 +289,7 @@ table caption {
 }
 
 th {
+  font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
   background-color:var(--basic-txt-bckg-dk2, tan);
   padding: 8px 16px;
   border-radius: 5px;
@@ -320,9 +321,15 @@ td {
 /*---FOOTER---*/
 
 footer {
-  height: 5vh;
+  display: flex;
+  justify-content: center;
+  height: max-content;
   flex-shrink: 0;
   background-color: var(--bckg-colour-darker2, darkturquoise);
+}
+
+footer p {
+  text-align: center;
 }
 
 /*-------NAVBAR: MOBILE FIRST------*/
