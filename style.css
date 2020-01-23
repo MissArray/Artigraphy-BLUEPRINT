@@ -17,22 +17,29 @@ small, .text_small {font-size: 0.889em;}
 
 
 :root {
-  /*COLOURS*/
-  --accent-colour1: #70D9F1;
-  --accent-colour2: #CA9171;
+  /*FONTS*/
   --bodytext: 'Raleway', Arial, sans-serif;
   --medium-text: 'Raleway Medium', Arial, Helvetica, sans-serif;
   --semibold-text: 'Raleway Semibold', Arial, sans-serif;
-  --basic-bckg-colour: 	#F8F9F8;
+  /*COLOURS - ACCENTS*/
+  --accent-colour1: #70D9F1;
+  --accent-colour2: #cfaf7b; /*fawn*/
+  /* #CA9171; */
+  /*COLOURS - BACKGROUNDS*/
+  --body-bckg-colour: 	#F8F9F8;
   --bckg-colour-darker1: #99dfe9;
   --bckg-colour-darker2: #7EDCF2;
   --list-marker-colour-even: #1295b4;
   --list-marker-colour-odd: #14a2c3;
-  --linkcolour-unv: #3c3731;     /*blackpepper*/
+  --basic-txt-bckg: #E2CFAF;    /* tint of fawn #cfaf7b*/
+  --basic-txt-bckg-dk1: 	#ddc8a3;
+  --basic-txt-bckg-dk2: 	#D8BF95;  
+  --basic-txt-bckg-lgt1: #E7D7BD;
+  --basic-txt-bckg-lgt2: #EBDFCA;
+  --sliding-menu-bckg: #ddc8a3;
+  /*COLOURS - TEXT*/
+  --linkcolour-unv: #272522;     /*blackpepper*/
   --basic-txt-colour: #362d26;  /*coffeebean*/
-  --basic-txt-bckg: #E2D0B3;    /*Alternative: Crayola almond #EED9C4; dairycream #edd2a4; raffia #ebc695; #d5bf8e; */
-  --basic-txt-bckg1: #fbae7a;
-  --sliding-menu-bckg: burlywood;
   /*TEXT SIZES*/
   --bodytext-size: 1em;
   --navbar-link-size: 1.125em;
@@ -91,7 +98,7 @@ body {
   margin: 0px;
   font-family: var(--bodytext, Arial, Helvetica, sans-serif);
   font-size: calc(12px + 0.4vw);
-  background-color: var(--basic-bckg-colour);
+  background-color: var(--body-bckg-colour);
  }
 
 header, footer {
@@ -102,7 +109,7 @@ header {
   display: flex;
   height: 10vh;
   margin-bottom: 15px;
-  background-color: var(--basic-bckg-colour);
+  background-color: var(--body-bckg-colour);
 }
 
 /* Shift sidebar to bottom of mobile screen. */
@@ -110,7 +117,7 @@ header {
 #sidebar {
   grid-column: span 12;
   grid-row: 4 / 5;
-  background-color: var(--basic-bckg-colour);
+  background-color: var(--body-bckg-colour);
 }
 
 /*
@@ -205,7 +212,7 @@ padding: 15px;
 }
 
 .accordion-item-input:checked ~ .accordion-item-text {
-	background-color: violet;
+	background-color: var(--basic-txt-bckg-dk2, tan);
 	padding: 15px;
 	max-height: 1000px;
   padding-top: 1em;
@@ -231,7 +238,7 @@ padding: 15px;
   padding: 5px 6px;
   border-radius: 5px 0;
   font-family: 'Segoe MDL2 Assets';
-  background-color: burlywood;
+  background-color: var(--basic-txt-bckg-dk1, burlywood);
   -webkit-transition: -webkit-transform .25s ease;
   transition: transform .25s ease;
   -webkit-transform: rotate(-180deg);
@@ -282,7 +289,7 @@ table caption {
 }
 
 th {
-  background-color: tan;
+  background-color:var(--basic-txt-bckg-dk2, tan);
   padding: 8px 16px;
   border-radius: 5px;
 }
@@ -293,12 +300,12 @@ table, th, td {
 }
 
 tr:nth-child(even) {
-  background-color: antiquewhite;
+  background-color: var(--basic-txt-bckg-lgt1, antiquewhite);
 }
 
 /*Combine both rules to prevent header from being styled as an odd row.*/
 tr:nth-child(odd):not(:first-child) {
-  background-color: var(--basic-txt-bckg2,linen);
+  background-color: var(--basic-txt-bckg-lgt2, linen);
 }
 
 td {
@@ -564,7 +571,7 @@ dd {
       box-shadow: none;
       height: auto;
       width: auto;
-      background-color: var(--basic-bckg-colour);
+      background-color: var(--body-bckg-colour);
       }
     
     .navbar a {
@@ -596,7 +603,7 @@ dd {
   #sidebar {
     grid-column: 12 / 13;
     grid-row: 1 / 3;
-    background-color: var(--basic-bckg-colour);
+    background-color: var(--body-bckg-colour);
   }
   
   
