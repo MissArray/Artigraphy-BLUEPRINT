@@ -22,21 +22,21 @@ small, .text_small {font-size: 0.889em;}
   --medium-text: 'Raleway Medium', Arial, Helvetica, sans-serif;
   --semibold-text: 'Raleway Semibold', Arial, sans-serif;
   /*COLOURS - ACCENTS*/
-  --accent-colour1: #70D9F1;
-  --accent-colour2: #cfaf7b; /*fawn*/
+  --accent-colour1: #4EDCC9;    /*base colour: Pantone #4EDCCA*/
+  --accent-colour2: #71E3D3;    /*base colour: Pantone #4EDCCA*/
   /* #CA9171; */
   /*COLOURS - BACKGROUNDS*/
   --body-bckg-colour: 	#F8F9F8;
-  --bckg-colour-darker1: #99dfe9;
-  --bckg-colour-darker2: #7EDCF2;
-  --list-marker-colour-even: #1295b4;
-  --list-marker-colour-odd: #14a2c3;
-  --basic-txt-bckg: #E2CFAF;    /* tint of fawn #cfaf7b*/
-  --basic-txt-bckg-dk1: 	#ddc8a3;
-  --basic-txt-bckg-dk2: 	#D8BF95;  
-  --basic-txt-bckg-lgt1: #E7D7BD;
-  --basic-txt-bckg-lgt2: #EBDFCA;
-  --sliding-menu-bckg: #ddc8a3;
+  --bckg-colour-darker1: #e4906f;   /*tint of Pantone #de754c*/
+  --bckg-colour-darker2: #e79e81;   /*tint of Pantone #de754c*/
+  --list-marker-colour-even: 	#30BFBF;  /*Crayola Maximum Blue Green*/
+  --list-marker-colour-odd:  	#00CCCC;  /*Crayola Robin's Egg Blue*/
+  --basic-txt-bckg: #e3e4cd;        /* tint of Pantone #c7ca9c*/
+  --basic-txt-bckg-dk1: #dddec2;  /* tint of Pantone #c7ca9c*/
+  --basic-txt-bckg-dk2: 	rgba(204, 205, 184, 0.918); /*Reduced opacity of shade of basic-txt-bckg #CCCDB8;*/
+  --basic-txt-bckg-lgt1: 	#EBECDC;
+  --basic-txt-bckg-lgt2: 	#E8E9D7;
+  --sliding-menu-bckg: #e4906f;     /*tint of Pantone #de754c*/
   /*COLOURS - TEXT*/
   --linkcolour-unv: #1f1812;     /*shade of cocoabrown #35281e*/
   --basic-txt-colour: #1f1812;  /*shade of cocoabrown #35281e*/
@@ -212,7 +212,7 @@ padding: 15px;
 }
 
 .accordion-item-input:checked ~ .accordion-item-text {
-	background-color: var(--basic-txt-bckg-dk2, tan);
+	background-color: var(--basic-txt-bckg-dk1, gainsboro);
 	padding: 15px;
 	max-height: 1000px;
   padding-top: 1em;
@@ -238,7 +238,7 @@ padding: 15px;
   padding: 5px 6px;
   border-radius: 5px 0;
   font-family: 'Segoe MDL2 Assets';
-  background-color: var(--basic-txt-bckg-dk1, burlywood);
+  background-color: var(--basic-txt-bckg-dk1, lightgray);
   -webkit-transition: -webkit-transform .25s ease;
   transition: transform .25s ease;
   -webkit-transform: rotate(-180deg);
@@ -248,7 +248,7 @@ padding: 15px;
 }
 
 .acc-item-arrow:hover, .acc-item-arrow:active {
-  background-color: var(--bckg-colour-darker2, darkturquoise);
+  background-color: var(--accent-colour1, darkturquoise);
 }
 
 .accordion-item-text {
@@ -290,7 +290,7 @@ table caption {
 
 th {
   font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
-  background-color:var(--basic-txt-bckg-dk2, tan);
+  background-color:var(--basic-txt-bckg-dk1, lightgray);
   padding: 8px 16px;
   border-radius: 5px;
 }
@@ -358,17 +358,10 @@ footer p {
   
   .menu-toggle:hover,
   .menu-toggle:focus {
-    color: var(--accent-colour2, tan);
+    color: var(--accent-colour2, darkturquoise);
   }
   
   
-  /*
-   nav {
-    max-width: 100vw;
-    margin-bottom: 5px;
-    background-color: lavender;
-}
-  */
   .navbar {
     position: absolute;
     display: none;
@@ -383,10 +376,14 @@ footer p {
   
 #navbar-close {
   font-size: 1.5em;
-  background-color: var(--bckg-colour-darker1, turquoise);
+  background-color: var(--bckg-colour-darker2, lightsalmon);
   border-radius: 50%;
   padding: 0.4em 0.5em;
   margin: 8px;
+}
+
+#navbar-close:hover, #navbar-close:focus {
+ background-color: var(--accent-colour2, darkturquoise);
 }
 
   .navbar ul {
@@ -407,7 +404,7 @@ footer p {
     padding: .75em 15px;
     line-height: 1em;
     font-family: var(--medium-text, Arial, Helvetica, sans-serif);
-    font-size: 1em;
+    font-size: 1.125em;
     color: var(--linkcolour-unv);
     text-decoration: none;
     /* border-bottom: 1px solid #383838; */
@@ -439,7 +436,7 @@ height: 3px;
 bottom: 0;
 left: 0;
 visibility: hidden;
-background-color: var(--accent-colour1);
+background-color: var(--accent-colour2, lightseagreen);
 transform: scaleX(0);
 transition: all 0.4s ease-in-out;
 }
@@ -490,7 +487,7 @@ a.animate-underline:hover:before, a.animate-underline:focus:before {
     width: 100%;
     height: 100%;
     z-index: 998;
-    background: rgba(112, 217, 241, 0.71);
+    background: var(--basic-txt-bckg-dk2, gainsboro);
     cursor: default;
   }
   
