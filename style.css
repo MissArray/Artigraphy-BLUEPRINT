@@ -155,10 +155,10 @@ padding: 15px;
   border-radius: 15px 0;
 }
 
-.main-centre-t {
+.main-right-t {
   grid-column: 10 / 12;
   grid-row: 1 / 2;
-  background-color: var(--bckg-colour-darker1, turquoise);
+  background-color: var(--list-marker-colour-odd, turquoise);
   border-radius: 15px 0;
 }
 
@@ -318,7 +318,13 @@ td {
   background-color: var(--basic-txt-bckg, wheat);
 }
 
-/*---FOOTER---*/
+/* GCOGLE CUSTOM SEARCH BAR */
+#___gcse_0 {
+  height: auto;
+}
+
+
+/*---FOOTER--z-*/
 
 footer {
   display: flex;
@@ -522,12 +528,25 @@ h3 {
   
   /* ----- LISTS - EXCEPTING NAVBAR ----- */
 
-.plain-list li:nth-child(even) {
-  color: var(--list-marker-colour-even);
+.plain-list {
+  list-style-type: none;
+}
+
+/*Adjust bullet size and colour*/
+
+.plain-list li::before {
+  content: '•';
+  font-size: 2.5em;
+  vertical-align: middle;
+  line-height: 0.5em;
 }
 
 .plain-list li:nth-child(odd) {
   color: var(--list-marker-colour-odd);
+}
+
+.plain-list li:nth-child(even) {
+  color: var(--list-marker-colour-even);
 }
 
 .plain-list span {
@@ -630,7 +649,7 @@ dd {
     
   }
   
-  .main-centre-t {
+  .main-right-t {
     grid-column: 8 / 12;
     grid-row: 1 / 2;
   }
