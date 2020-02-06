@@ -3,6 +3,10 @@
 /* For the CSS target: selector technique, see also: https://developer.mozilla.org/en-US/docs/Web/CSS/:target*/
 /* For the CSS accordion with the checkbox hack: https://code-boxx.com/simple-responsive-accordion-pure-css/*/
 /* Possibly restyle lists when ::marker pseudoelement gains wider browser support. */
+/* Dropdown navigation menus and why it's best to avoid them in simple websites:
+https://www.nngroup.com/articles/drop-down-menus/
+*/
+
 /*
 TYPE SCALE: Major Second 1.125
 running text: 1em
@@ -107,7 +111,7 @@ header, footer {
 
 header {
   display: flex;
-  height: 10vh;
+  height: max-content;
   margin-bottom: 15px;
   background-color: var(--body-bckg-colour);
 }
@@ -318,13 +322,8 @@ td {
   background-color: var(--basic-txt-bckg, wheat);
 }
 
-/* GCOGLE CUSTOM SEARCH BAR */
-#___gcse_0 {
-  height: auto;
-}
 
-
-/*---FOOTER--z-*/
+/*---FOOTER---*/
 
 footer {
   display: flex;
@@ -497,6 +496,17 @@ a.animate-underline:hover:before, a.animate-underline:focus:before {
     cursor: default;
   }
   
+/*--LOGO--*/
+#logo {
+  width: 83.33%;
+  height: auto;
+  margin: 0.2em auto;
+}
+
+#logo img {
+  width: 90%;
+  height: auto;
+}
 
 /*---- HEADINGS ----*/
 
@@ -576,6 +586,12 @@ dd {
       display: flex;
       flex-direction: row;
     }
+
+    #logo {
+      width: 14em;
+      height: auto;
+      margin: 0.5em;
+    }
     
    /*DISPLAY MENU*/
     .navbar {
@@ -588,6 +604,7 @@ dd {
     
     .navbar ul {
       display: flex;
+      align-items: center;
       padding: 0;
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
@@ -613,7 +630,7 @@ dd {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding-top: 0.75em;
+      padding-top: 0;
   }
 
 
@@ -657,6 +674,10 @@ dd {
   .main-text {
     grid-column: 2 / 12;
     grid-row: 2 / 3;
+  }
+
+  footer {
+    margin-top: 1em;
   }
 
   
