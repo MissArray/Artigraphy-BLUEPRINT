@@ -498,14 +498,16 @@ a.animate-underline:hover:before, a.animate-underline:focus:before {
   
 /*--LOGO--*/
 #logo {
+  display: flex;
   width: 83.33%;
   height: auto;
-  margin: 0.2em auto;
+  margin: 0.75em 0 0.25em auto;
 }
 
 #logo img {
-  width: 90%;
+  width: 50%;
   height: auto;
+  margin: 0 12% 0 auto;
 }
 
 /*---- HEADINGS ----*/
@@ -588,9 +590,15 @@ dd {
     }
 
     #logo {
-      width: 14em;
+      width: 12em;
       height: auto;
-      margin: 0.5em;
+      margin: 0.75em 0.5em 1em 0.5em;
+    }
+
+    #logo img {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
     }
     
    /*DISPLAY MENU*/
