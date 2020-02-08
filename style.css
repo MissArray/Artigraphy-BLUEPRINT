@@ -105,6 +105,12 @@ body {
   background-color: var(--body-bckg-colour);
  }
 
+/*--HIGHLIGHT SELECTED TEXT--*/
+body ::selection {
+  color: #a55641;       /*Shade of Pantone Copper Coin*/
+  background: #9cebe0;  /*Tint of accent colour*/
+}
+
 header, footer {
   width: 100vw;
 }
@@ -155,7 +161,7 @@ padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--bckg-colour-darker2, darkturquoise);
+  background-color: var(--bckg-colour-darker2, lightsalmon);
   border-radius: 15px 0;
 }
 
@@ -330,7 +336,7 @@ footer {
   justify-content: center;
   height: max-content;
   flex-shrink: 0;
-  background-color: var(--bckg-colour-darker2, darkturquoise);
+  background-color: var(--bckg-colour-darker2, lightsalmon);
 }
 
 footer p {
