@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>English Finish - Home</title>
+    <title>English Finish - MASTER TEMPLATE</title>
     <link rel='stylesheet' type='text/css' href='style.css'>
-    
+    <link rel="shortcut icon" href='/Assets/Images/EF-favicon.png'>
 </head>
 <body>
   <header>
@@ -18,9 +18,11 @@
       <span class="scr-read-only">Open main menu</span>
       <span class='icon-font' aria-hidden='true'>&#xE700;</span>
     </a>
-        
-    <h1 class="logo">LOGO HERE</h1>
-        
+    
+    <div id='logo'>
+      <img src='/Assets/Images/EF_logo_copper_pen.svg' alt='logo'>
+    </div>
+
     <nav id="navbar" class="navbar" aria-label="Main menu">
       <a href="#navbar-toggle"
         id="navbar-close"
@@ -29,13 +31,29 @@
         <span class="scr-read-only ">Close main menu</span>
         <span class='icon-font' aria-hidden='true'>&#xE8BB;</span>
       </a>
+     
       <ul id='navlist'>
-        <li><a href="#" class='animate-underline'>Home</a></li>
-        <li><a href="#" class='animate-underline'>Content Editing</a></li>
-        <li><a href="#" class='animate-underline'>Workshops &amp; Training</a></li>
-        <li><a href="#" class='animate-underline'>Rates</a></li>
-        <li><a href="#" class='animate-underline'>Terms &amp; Conditions</a></li>
-        <li><a href="#" class='animate-underline'>Contact Us</a></li>
+        <li>
+          <a href='index.html' class='animate-underline'>Home</a>
+        </li>
+        <li>
+          <a href='content-editing.html' target='_blank' class='animate-underline'>Content Editing</a>
+        </li>
+        <li>
+          <a href='workshops.html' target='_blank' class='animate-underline'>Workshops &amp; Training</a>
+        </li>
+        <li>
+          <a href='rates.html' target='_blank' class='animate-underline'>Rates</a>
+        </li>
+        <li>
+          <a href='about-html' target='_blank' class='animate-underline'>About</a>
+        </li>
+        <li>
+          <a href='testimonies.html' target='blank' class='animate-underline'>Testimonies</a>
+        </li>
+        <li>
+          <a class='animate-underline' href='mailto:info@englishfinish.co.uk'>Contact us</a>
+        </li>
       </ul>
     </nav>
     <a href="#navbar-toggle"
@@ -46,14 +64,13 @@
   </header>
 
   <main>      
-      <div id="sidebar">sidebar</div>        
-      <div id="main-left-t">
+      <div id="sidebar"></div>        
+      <div class="main-left-t">
         <h2>What is English Finish?</h2></div>
-      <div id="main-centre-t">2</div>
+      <div class="main-right-t"></div>
       <section class="main-text">
-        <p>
-          <h3>Copy editing or proofreading?</h3>
- 
+        <h3>Copy editing or proofreading?</h3>
+        <p> 
 While there is an overlap between the two, the terms are not synonymous. When you submit a manuscript for publication it is first copy edited, then proofread. In the process, the copy editor will overhaul your manuscript so that the proofreader can run the final check and eliminate any remaining errors before your work is sent to the printer. 
 
 Find out more about the copy editing and proofreading services offered by English Finish to decide which service you need.
@@ -80,30 +97,129 @@ Find out more about the copy editing and proofreading services offered by Englis
         </dl>
       </section>
 
-      <section class='accordion-text'>
-        <div class='accordion-item'>
-          <input id='acc-item-1' type='checkbox' name 'accordion-item'>
-          <label for='acc-item-1'>Item 1</label>
-          <div class='acc-item-content'>
-            <p>
-              Some content - 1
-            </p>
-          </div>
-        </div>
-        
-        <div class='accordion-item'>
-          <input id='acc-item-2' type='checkbox' name 'accordion-item'>
-          <label for='acc-item-2'>Item 2</label>
-          <div class='acc-item-content'>
-            <p>
-              Some content - 2
-            </p>
-          </div>
-        </div>
+        <ul class="accordion-wrapper">
+        <li class="accordion-item">
+        <input id="faq1" class="accordion-item-input" name="accordion" type="checkbox"/>
+          <label for="faq1" class="accordion-item-heading">Item 1<span class="acc-item-arrow">&#xE96D;</span>
+          </label>
+          <p class="accordion-item-text">
+            Some content
+      </p>
+        </li>
+      </ul>
+      
+      <section class='table-wrapper'>
+        <table>
+          <caption>Rates &amp; Fees </caption>	
+          <tbody>		
+            <tr>
+              <th scope='col'>Manuscript length (word count)</th>
+              <th scope='col'>Basic / Basic Plus</th>
+              <th scope='col'>Comprehensive / Comprehensive Plus</th>
+            </tr>
+            
+            <tr>
+              <td >4000&ndash;6000</td>
+              <td>&pound;400 &frasl; &pound;450</td>
+              <td>&pound;450 &frasl; &pound;500</td>
+            </tr>
+            
+            <tr>
+              <td>6001&ndash;8000</td>
+              <td>&pound;450 &frasl; &pound;500</td>
+              <td>&pound;500 &frasl; &pound;550</td>
+            </tr>
+            
+            <tr>
+              <td>8001&ndash;10000</td>
+              <td>&pound;500 &frasl; &pound;550</td>
+              <td>&pound;550 &frasl; &pound;600</td>
+            </tr>
+            
+            <tr>
+              <td>10001&ndash;12000</td>
+              <td>&pound;550 &frasl; &pound;600</td>
+              <td>&pound;650 &frasl; &pound;700</td>
+            </tr>
+            
+            <tr>
+              <td>12001&ndash;14000</td>
+              <td>&pound;650 &frasl; &pound700</td>
+              <td>&pound;750 &frasl; &pound;800</td>
+            </tr>
+            
+            <tr>
+              <td>over 14000</td>
+              <td>Please contact us</td>
+              <td>Please contact us</td>
+            </tr>
+            
+            <tr id='blank-row'>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            
+            <tr>
+              <td id='workshops'><span>Workshops</span></td>
+              <td>From &pound;60 an hour</td>
+              <td>More details</td>
+            </tr>
+            
+          </tbody>
+        </table>
       </section>
+
   </main>
     
-  <footer>footer</footer>
+  <footer>
+
+    <section class='footer-info'>
+      <div class='footer-column'>
+        <h1 class='footer-h1'>About</h3>
+        <ul class='footer-ul'>
+          <li><a href='https://www.linkedin.com/in/artemis-gause' target='_blank'>Connect on LinkedIn</a></li>
+          <li>
+            <a href='https://github.com/MissArray' target='_blank'>Coding projects on GitHub</a>
+          </li>
+          <li>
+            <a href='https://drive.google.com/open?id=1Ni0v1aVclal_RrQMw0wp3Lki8Emj8_kL' target='_blank'>Design portfolio on Dribbble</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class='footer-column'>
+        <h1 class='footer-h1'>Quick links</h3>
+        <ul class='footer-ul'>
+          <li>
+            <a href='rates.html' target='_blank'>Pricing / Rates</a>
+          </li>
+          <li>
+            <a href='terms-conditions.html' target='_blank'>Term &amp; Conditions</a>
+            </li>
+          <li>
+            <a href='https://www.sfep.org.uk/resources/suggested-minimum-rates/' target='_blank'>S<i>f</i>ep price guidelines</a>
+            </li>
+        </ul>
+      </div>
+
+      <div class='footer-column'>
+        <h1 id='contact_EF' class='footer-h1'>Contact</h3>
+        <ul class='footer-ul'>
+          <li>
+            <a href="mailto:info@englishfinish.co.uk" target='_blank'>info@englishfinish.co.uk
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section id='footer-copyright'>
+    <p>Logo, web design &amp; source-code: <span id='copyright'>&copy;</span> Artemis Gause 2020</p>
+    </section>
+
+    </footer>
 
 </body>
 </html>

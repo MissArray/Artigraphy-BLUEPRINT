@@ -1,8 +1,20 @@
 /* For effects, see https://tympanus.net/Tutorials/CreativeCSS3AnimationMenus/index2.html */
 
 /* For the CSS target: selector technique, see also: https://developer.mozilla.org/en-US/docs/Web/CSS/:target*/
-/* For the CSS accordion with the checkbox hack: https://code-boxx.com/simple-responsive-accordion-pure-css/*/
+
+/* For the CSS accordion with the checkbox hack: https://code-boxx.com/simple-responsive-accordion-pure-css/
+*/
+
+/*
+Example of multi-column footer with flexbox:
+https://webdesign.tutsplus.com/tutorials/how-to-build-a-responsive-multi-level-sticky-footer-with-flexbox--cms-33341
+*/
+
 /* Possibly restyle lists when ::marker pseudoelement gains wider browser support. */
+/* Dropdown navigation menus and why it's best to avoid them in simple websites:
+https://www.nngroup.com/articles/drop-down-menus/
+*/
+
 /*
 TYPE SCALE: Major Second 1.125
 running text: 1em
@@ -12,25 +24,45 @@ h2 {font-size: 1.602em;}
 h3 {font-size: 1.424em;}
 h4 {font-size: 1.266em;}
 h5 {font-size: 1.125em;}
-small, .text_small {font-size: 0.889em;}
+h6 {font-size: 0.889em;}
+small, .text_small {font-size: 0.79em;}
 */
 
 
 :root {
-  --accent-colour1: #70D9F1;
-  --accent-colour2: #CA9171;
+  /*FONTS*/
   --bodytext: 'Raleway', Arial, sans-serif;
   --medium-text: 'Raleway Medium', Arial, Helvetica, sans-serif;
   --semibold-text: 'Raleway Semibold', Arial, sans-serif;
-  --basic-bckg-colour: 	#F8F9F8;
-  --bckg-colour-darker1: #99dfe9;
-  --bckg-colour-darker2: #7EDCF2;
-  --list-marker-colour-even: #1295b4;
-  --list-marker-colour-odd: #14a2c3;
-  --linkcolour-unv: #3c3731;     /*blackpepper*/
-  --basic-txt-colour: #362d26;  /*coffeebean*/
-  --basic-txt-bckg: #E2D0B3;    /*Alternative: Crayola almond #EED9C4; dairycream #edd2a4; raffia #ebc695; #d5bf8e; */
-  --sliding-menu-bckg: burlywood;
+  /*COLOURS - ACCENTS*/
+  --accent-colour1: #4EDCC9;    /*base colour: Pantone #4EDCCA*/
+  --accent-colour2: #71E3D3;    /*base colour: Pantone #4EDCCA*/
+  /* #CA9171; */
+  /*COLOURS - BACKGROUNDS*/
+  --body-bckg-colour: 	#F8F9F8;
+  --bckg-colour-darker1: #e4906f;   /*tint of Pantone #de754c*/
+  --bckg-colour-darker2: #e79e81;   /*tint of Pantone #de754c*/
+  --list-marker-colour-even: 	#30BFBF;  /*Crayola Maximum Blue Green*/
+  --list-marker-colour-odd:  	#00CCCC;  /*Crayola Robin's Egg Blue*/
+  --basic-txt-bckg: #e3e4cd;        /* tint of Pantone #c7ca9c*/
+  --basic-txt-bckg-dk1: #dddec2;  /* tint of Pantone #c7ca9c*/
+  --basic-txt-bckg-dk2: 	rgba(204, 205, 184, 0.918); /*Reduced opacity of shade of basic-txt-bckg #CCCDB8;*/
+  --basic-txt-bckg-lgt1: 	#EBECDC;
+  --basic-txt-bckg-lgt2: 	#E8E9D7;
+  --sliding-menu-bckg: #e4906f;     /*tint of Pantone #de754c*/
+  /*COLOURS - TEXT*/
+  --linkcolour-unv: #1f1812;     /*shade of cocoabrown #35281e*/
+  --basic-txt-colour: #1f1812;  /*shade of cocoabrown #35281e*/
+  /*TEXT SIZES*/
+  --bodytext-size: 1em;
+  --navbar-link-size: 1.125em;
+  --h1-font-size: 1.802em;
+  --h2-font-size: 1.602em;
+  --h3-font-size: 1.424em;
+  --h4-font-size: 1.266em;
+  --h5-font-size: 1.125em;
+  --h6-font-size: 0.889em;
+  --small-text: 0.79em;
 }
 
 @font-face {
@@ -80,8 +112,14 @@ body {
   margin: 0px;
   font-family: var(--bodytext, Arial, Helvetica, sans-serif);
   font-size: calc(12px + 0.4vw);
-  background-color: var(--basic-bckg-colour);
+  background-color: var(--body-bckg-colour);
  }
+
+/*--HIGHLIGHT SELECTED TEXT--*/
+body ::selection {
+  color: #a55641;       /*Shade of Pantone Copper Coin*/
+  background: #9cebe0;  /*Tint of accent colour*/
+}
 
 header, footer {
   width: 100vw;
@@ -89,9 +127,9 @@ header, footer {
 
 header {
   display: flex;
-  height: 10vh;
+  height: max-content;
   margin-bottom: 15px;
-  background-color: var(--basic-bckg-colour);
+  background-color: var(--body-bckg-colour);
 }
 
 /* Shift sidebar to bottom of mobile screen. */
@@ -99,7 +137,7 @@ header {
 #sidebar {
   grid-column: span 12;
   grid-row: 4 / 5;
-  background-color: var(--basic-bckg-colour);
+  background-color: var(--body-bckg-colour);
 }
 
 /*
@@ -112,30 +150,35 @@ main {
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 75px auto auto 5vh;    
+  grid-template-rows: 75px auto auto auto 5vh;    
   height: 50vh;
   margin-bottom: 0.25em;
 }
 
-main > div, section {
+main > div {
   margin: 5px;
   padding: 15px;
 }
 
-#main-left-t {
+section {
+margin: 5px;
+padding: 15px;
+}
+
+.main-left-t {
   grid-column: 2 / 10;
   grid-row: 1 / 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--bckg-colour-darker2, aqua);
+  background-color: var(--bckg-colour-darker2, lightsalmon);
   border-radius: 15px 0;
 }
 
-#main-centre-t {
+.main-right-t {
   grid-column: 10 / 12;
   grid-row: 1 / 2;
-  background-color: var(--bckg-colour-darker1, turquoise);
+  background-color: var(--list-marker-colour-odd, turquoise);
   border-radius: 15px 0;
 }
 
@@ -144,70 +187,222 @@ main > div, section {
   grid-column: 2 / 12;
   grid-row: 2 / 3;
   background-color: var(--basic-txt-bckg, wheat);
-  font-family: var(--bodytext);
+  font-family: var(--bodytext, Arial, Helvetica, sans-serif);
   color: var(--basic-txt-colour, darkslategray);
   border-radius: 15px 0;
 }
 
-/*--- ACCORDION for TEXT ---*/
-.accordion-text {
+/*--- ACCORDION LIST ---*/
+/* Originally tried using the 'content' property for the up/down arrow; however, screen-readers don't pick up the 'content' property at all, hence the span-within-the-label solution*/
+.accordion-wrapper {
   flex: 1;
-  grid-column: 2 /12;
+  grid-column: 2 / 12;
   grid-row: 3 / 4;
+  list-style: none;   /* none outside*/
+  margin: 5px;
+  padding: 15px;
   background-color: var(--basic-txt-bckg, wheat);
-  font-family: var(--bodytext);
+  font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
   color: var(--basic-txt-colour, darkslategray);
   border-radius: 15px 0;
 }
 
-.accordion-item {
-  position: relative;
-  margin: 0 0.2em 0.3em 0;
-}
-
-.accordion-item label {
+.accordion-item-heading {
   display: block;
-  font-family: var(--semibold-text);
-  color: var(--basic-txt-colour);
-  padding: 0.25em;
+  position: relative;
+  font-size: 1.266em;
   cursor: pointer;
 }
 
-.accordion-item label::after {
+.accordion-item {
+  padding: 0;
+  margin: 0;
+ }
+
+/*Hide the checkbox*/
+.accordion-item-input {
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1;
+	overflow: hidden;
+	position: absolute;
+	left: -9999px;
+}
+
+.accordion-item-input:checked ~ .accordion-item-text {
+	background-color: var(--basic-txt-bckg-dk1, gainsboro);
+	padding: 15px;
+	max-height: 1000px;
+  padding-top: 1em;
+  margin: 0.75em 0;
+  border-radius: 15px 0;
+	-webkit-transition: max-height 0.15s ease-in, margin 0.15s ease-in, padding 0.15s ease-in;
+	transition: max-height 0.15s ease-in, margin 0.15s ease-in, padding 0.15s ease-in;
+}
+
+/* Match accordion-item-headings only when they follow and are siblings of an accordion-item-input that is checked.*/
+
+.accordion-item-input:checked ~ .accordion-item-heading > .acc-item-arrow {
+	-webkit-transform: rotate(0);
+	  -ms-transform: rotate(0);
+	   transform: rotate(0);
+}
+
+.acc-item-arrow {
   display: block;
-  content: '\022c1'; /* content:'\022c1' or '\0039b'  */
   position: absolute;
-  right: 10px;
-  top: 0px;
-  background-color: burlywood;
-  padding: 2px 6px;
+  right: 0;
+  top: -0.3em;
+  padding: 5px 6px;
   border-radius: 5px 0;
-  transition: all 0.3s;
+  font-family: 'Segoe MDL2 Assets';
+  background-color: var(--basic-txt-bckg-dk1, lightgray);
+  -webkit-transition: -webkit-transform .25s ease;
+  transition: transform .25s ease;
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 
-.accordion-item input[type=checkbox]:checked + label::after {
-  transform: rotate(180deg);
-  background-color: var(--bckg-colour-darker1);
+.acc-item-arrow:hover, .acc-item-arrow:active {
+  background-color: var(--accent-colour1, darkturquoise);
 }
 
-.accordion-item input {
-  display: none;
-}
-
-.accordion-item input:checked ~ .acc-item-content {
-  display: block;
-}
-
-.acc-item-content {
-  display: none;
+.accordion-item-text {
   overflow: hidden;
+  max-height: 0;
+  margin-bottom: 0;
+  font-family: var(--bodytext, Arial, Helvetica, sans-serif);
+  -webkit-transition: max-height .15s ease-out, margin-bottom .15s ease-out, padding .15s ease-out;
+	-moz-transition: max-height .15s ease-out, margin-bottom .15s ease-out, padding .15s ease-out;
+	-o-transition: max-height .15s ease-out, margin-bottom .15s ease-out, padding .15s ease-out;
+	transition: max-height .15s ease-out, margin-bottom .15s ease-out, padding .15s ease-out;
 }
+
+/*---ACCESSIBLE & RESPONSIVE TABLE---*/
+.table-wrapper {
+  flex: 1;
+  grid-column: 2 / 12;
+  grid-row: 4 / 5;
+  margin: 5px;
+  padding: 15px;
+  background-color: var(--basic-txt-bckg, wheat);
+  color: var(--basic-txt-colour, darkslategray);
+  border-radius: 15px 0;
+  overflow: auto;
+}
+
+table {
+  margin: 1em auto;
+}
+
+table caption {
+  font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
+  font-size: var(--h3-font-size);
+  margin-bottom: 1em;
+  padding: 15px;
+  background-color: var(--bckg-colour-darker1);
+  border-radius: 15px 0;
+}
+
+th {
+  font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
+  background-color:var(--basic-txt-bckg-dk1, lightgray);
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+table, th, td {
+  border: 2px;
+  border-spacing: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: var(--basic-txt-bckg-lgt1, antiquewhite);
+}
+
+/*Combine both rules to prevent header from being styled as an odd row.*/
+tr:nth-child(odd):not(:first-child) {
+  background-color: var(--basic-txt-bckg-lgt2, linen);
+}
+
+td {
+  padding: 8px 16px 8px 24px;
+}
+
+#blank-row > td {
+  border-collapse: collapse;
+  background-color: var(--basic-txt-bckg, wheat);
+}
+
+
+/*---FOOTER---*/
 
 footer {
-  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: max-content;
   flex-shrink: 0;
-  background-color: var(--bckg-colour-darker2, darkturquoise);
+  background-color: var(--bckg-colour-darker2, lightsalmon);
 }
+
+.footer-h1 {
+  font-size: var(--h6-font-size);
+  text-align: left;
+  padding-left: 1.7em;
+}
+
+footer p {
+  text-align: center;
+}
+
+.footer-ul {
+  list-style-type: none;
+  font-size: var(--small-text);
+}
+
+.footer-ul li {
+  padding-bottom: 0.75em;
+}
+
+.footer-ul a {
+  text-decoration: none;
+  color: var(--linkcolour-unv, darkslategray);
+  padding: 0.25em 0.5em;
+}
+
+.footer-ul a:hover, .footer-ul a:focus {
+  background-color: var(--accent-colour1, turquoise);
+  border-radius: 5px 0;
+}
+
+.footer-info{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#footer-copyright {
+  font-size: var(--small-text);
+  background-color: var(--bckg-colour-darker1);
+  border-radius: 15px 0;
+  padding: 0 15px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+#copyright {
+  /* color: var(--list-marker-colour-odd, darkturquoise); */
+  color: #ac603c;
+  background-color: #dfb6a2;
+  border-radius: 50%;
+  padding: 0 3px;
+  font-size: 1.266em;
+  }
+
 
 /*-------NAVBAR: MOBILE FIRST------*/
 
@@ -235,17 +430,10 @@ footer {
   
   .menu-toggle:hover,
   .menu-toggle:focus {
-    color: var(--accent-colour2, tan);
+    color: var(--accent-colour2, darkturquoise);
   }
   
   
-  /*
-   nav {
-    max-width: 100vw;
-    margin-bottom: 5px;
-    background-color: lavender;
-}
-  */
   .navbar {
     position: absolute;
     display: none;
@@ -260,13 +448,17 @@ footer {
   
 #navbar-close {
   font-size: 1.5em;
-  background-color: var(--bckg-colour-darker1, turquoise);
+  background-color: var(--bckg-colour-darker2, lightsalmon);
   border-radius: 50%;
   padding: 0.4em 0.5em;
   margin: 8px;
 }
 
-  .navbar ul {
+#navbar-close:hover, #navbar-close:focus {
+ background-color: var(--accent-colour2, darkturquoise);
+}
+
+  #navlist {
     list-style: none;
     margin: 0;
     padding: 2.5em 0 0;
@@ -284,10 +476,9 @@ footer {
     padding: .75em 15px;
     line-height: 1em;
     font-family: var(--medium-text, Arial, Helvetica, sans-serif);
-    font-size: 1em;
+    font-size: 1.125em;
     color: var(--linkcolour-unv);
     text-decoration: none;
-    /* border-bottom: 1px solid #383838; */
   }
   
   .navbar li:first-child a {
@@ -316,7 +507,7 @@ height: 3px;
 bottom: 0;
 left: 0;
 visibility: hidden;
-background-color: var(--accent-colour1);
+background-color: var(--accent-colour2, lightseagreen);
 transform: scaleX(0);
 transition: all 0.4s ease-in-out;
 }
@@ -367,27 +558,41 @@ a.animate-underline:hover:before, a.animate-underline:focus:before {
     width: 100%;
     height: 100%;
     z-index: 998;
-    background: rgba(112, 217, 241, 0.71);
+    background: var(--basic-txt-bckg-dk2, gainsboro);
     cursor: default;
   }
   
+/*--LOGO--*/
+#logo {
+  display: flex;
+  width: 83.33%;
+  height: auto;
+  margin: 0.75em 0 0.25em auto;
+}
+
+#logo img {
+  width: 50%;
+  height: auto;
+  margin: 0 12% 0 auto;
+}
 
 /*---- HEADINGS ----*/
 
 h1 {
   font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
-  font-size: 1.802em;
+  font-size: var(--h1-font-size);
   margin: 10px 9vw 10px auto;
 }
 
 h2 {
   font-family: var(--medium-text, Arial, Helvetica, sans-serif);
-  font-size: 1.602em;
+  font-size: var(--h2-font-size);
 }
 
 h3 {
   font-family: var(--medium-text, Arial, Helvetica, sans-serif);
-  font-size: 1.424em;
+  font-size: var(--h3-font-size);
+  margin: 0;
 }
 
   @supports (position: fixed) {
@@ -401,12 +606,25 @@ h3 {
   
   /* ----- LISTS - EXCEPTING NAVBAR ----- */
 
-.plain-list li:nth-child(even) {
-  color: var(--list-marker-colour-even);
+.plain-list {
+  list-style-type: none;
+}
+
+/*Adjust bullet size and colour*/
+
+.plain-list li::before {
+  content: '•';
+  font-size: 2.5em;
+  vertical-align: middle;
+  line-height: 0.5em;
 }
 
 .plain-list li:nth-child(odd) {
   color: var(--list-marker-colour-odd);
+}
+
+.plain-list li:nth-child(even) {
+  color: var(--list-marker-colour-even);
 }
 
 .plain-list span {
@@ -436,6 +654,18 @@ dd {
       display: flex;
       flex-direction: row;
     }
+
+    #logo {
+      width: 12em;
+      height: auto;
+      margin: 0.75em 0.5em 1em 0.5em;
+    }
+
+    #logo img {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
     
    /*DISPLAY MENU*/
     .navbar {
@@ -446,17 +676,19 @@ dd {
       display: block;
     }
     
-    .navbar ul {
+    #navlist {
       display: flex;
-      padding: 0;
+      align-items: flex-start;
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       box-shadow: none;
-      height: auto;
+      max-height: 2em;
       width: auto;
-      background-color: var(--basic-bckg-colour);
-      }
-    
+      padding: 0.75em 0 0 0;
+      background-color: var(--body-bckg-colour);
+     
+    }
+
     .navbar a {
       font-size: 1em;
       color: var(--linkcolour-unv);
@@ -470,14 +702,14 @@ dd {
     }
 
     #navlist li {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding-top: 0.75em;
+      padding: 3em 0.5em 0 0.5em;  
   }
 
+  .navbar a {
+    padding-top: 0;
+  }
 
-  .navbar li:first-child a {
+  #navlist li:first-child a {
       margin-top: 0;
   }
 
@@ -486,7 +718,7 @@ dd {
   #sidebar {
     grid-column: 12 / 13;
     grid-row: 1 / 3;
-    background-color: var(--basic-bckg-colour);
+    background-color: var(--body-bckg-colour);
   }
   
   
@@ -503,13 +735,13 @@ dd {
     padding: 20px;
   }
   
-  #main-left-t {
+  .main-left-t {
     grid-column: 2 / 8;
     grid-row: 1 / 2;
     
   }
   
-  #main-centre-t {
+  .main-right-t {
     grid-column: 8 / 12;
     grid-row: 1 / 2;
   }
@@ -517,12 +749,20 @@ dd {
   .main-text {
     grid-column: 2 / 12;
     grid-row: 2 / 3;
+    padding: 1em 2em;
   }
 
-  .accordion-text {
-    grid-column: 2 / 12;
+  footer {
+    margin-top: 1em;
   }
 
+  .footer-info {
+    flex: 1;
+    justify-content: space-evenly;
+    min-width: 80%;
+  }
+
+  
   h1 {
     margin: 10px 40px auto 20px;
   }
