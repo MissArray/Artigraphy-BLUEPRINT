@@ -673,13 +673,15 @@ dd {
       width: 12em;
       height: auto;
       margin: 0.75em 0.5em 1em 0.5em;
+      background-image: url('/Assets/Images/EF_logo_copper_pen.svg');
+      background-image: url(/Assets/Images/EF_logo_copper_pen.png);
     }
 
-    #logo img {
-      width: 100%;
+    /* #logo img {
+      width: 12em;
       height: auto;
       margin: 0 auto;
-    }
+    } */
     
    /*DISPLAY MENU*/
     .navbar {
