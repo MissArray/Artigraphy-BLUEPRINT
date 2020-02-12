@@ -97,8 +97,22 @@ small, .text_small {font-size: 0.79em;}
   format('truetype');
 }
 
+@font-face {
+  font-family: 'IcoMoon-Free';
+  src:
+  local(IcoMoon-Free),
+  url('Assets/Fonts/IcoMoon-Free.ttf'),
+  format('truetype');
+}
+
 .icon-font {
   font-family: 'Segoe MDL2 Assets', Arial, sans-serif;
+}
+
+.social-icon {
+  font-family: 'IcoMoon-Free';
+  font-size: 1.266em;
+  color: #2E1F19;
 }
 
 /*----- MOBILE FIRST ----*/
@@ -396,8 +410,8 @@ footer p {
 
 #copyright {
   /* color: var(--list-marker-colour-odd, darkturquoise); */
-  color: #ac603c;
-  background-color: #dfb6a2;
+  color:#734F40;
+  background-color: #E9A78D;
   border-radius: 50%;
   padding: 0 3px;
   font-size: 1.266em;
