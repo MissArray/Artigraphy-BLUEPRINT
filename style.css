@@ -1,7 +1,15 @@
 /* For effects, see https://tympanus.net/Tutorials/CreativeCSS3AnimationMenus/index2.html */
 
 /* For the CSS target: selector technique, see also: https://developer.mozilla.org/en-US/docs/Web/CSS/:target*/
-/* For the CSS accordion with the checkbox hack: https://code-boxx.com/simple-responsive-accordion-pure-css/*/
+
+/* For the CSS accordion with the checkbox hack: https://code-boxx.com/simple-responsive-accordion-pure-css/
+*/
+
+/*
+Example of multi-column footer with flexbox:
+https://webdesign.tutsplus.com/tutorials/how-to-build-a-responsive-multi-level-sticky-footer-with-flexbox--cms-33341
+*/
+
 /* Possibly restyle lists when ::marker pseudoelement gains wider browser support. */
 /* Dropdown navigation menus and why it's best to avoid them in simple websites:
 https://www.nngroup.com/articles/drop-down-menus/
@@ -16,7 +24,8 @@ h2 {font-size: 1.602em;}
 h3 {font-size: 1.424em;}
 h4 {font-size: 1.266em;}
 h5 {font-size: 1.125em;}
-small, .text_small {font-size: 0.889em;}
+h6 {font-size: 0.889em;}
+small, .text_small {font-size: 0.79em;}
 */
 
 
@@ -52,7 +61,8 @@ small, .text_small {font-size: 0.889em;}
   --h3-font-size: 1.424em;
   --h4-font-size: 1.266em;
   --h5-font-size: 1.125em;
-  --small-text: 0.889em;
+  --h6-font-size: 0.889em;
+  --small-text: 0.79em;
 }
 
 @font-face {
@@ -333,15 +343,66 @@ td {
 
 footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   height: max-content;
   flex-shrink: 0;
   background-color: var(--bckg-colour-darker2, lightsalmon);
 }
 
+.footer-h1 {
+  font-size: var(--h6-font-size);
+  text-align: left;
+  padding-left: 1.7em;
+}
+
 footer p {
   text-align: center;
 }
+
+.footer-ul {
+  list-style-type: none;
+  font-size: var(--small-text);
+}
+
+.footer-ul li {
+  padding-bottom: 0.75em;
+}
+
+.footer-ul a {
+  text-decoration: none;
+  color: var(--linkcolour-unv, darkslategray);
+  padding: 0.25em 0.5em;
+}
+
+.footer-ul a:hover, .footer-ul a:focus {
+  background-color: var(--accent-colour1, turquoise);
+  border-radius: 5px 0;
+}
+
+.footer-info{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#footer-copyright {
+  font-size: var(--small-text);
+  background-color: var(--bckg-colour-darker1);
+  border-radius: 15px 0;
+  padding: 0 15px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+#copyright {
+  /* color: var(--list-marker-colour-odd, darkturquoise); */
+  color: #ac603c;
+  background-color: #dfb6a2;
+  border-radius: 50%;
+  padding: 0 3px;
+  font-size: 1.266em;
+  }
+
 
 /*-------NAVBAR: MOBILE FIRST------*/
 
@@ -397,7 +458,7 @@ footer p {
  background-color: var(--accent-colour2, darkturquoise);
 }
 
-  .navbar ul {
+  #navlist {
     list-style: none;
     margin: 0;
     padding: 2.5em 0 0;
@@ -418,7 +479,6 @@ footer p {
     font-size: 1.125em;
     color: var(--linkcolour-unv);
     text-decoration: none;
-    /* border-bottom: 1px solid #383838; */
   }
   
   .navbar li:first-child a {
@@ -616,18 +676,19 @@ dd {
       display: block;
     }
     
-    .navbar ul {
+    #navlist {
       display: flex;
-      align-items: center;
-      padding: 0;
+      align-items: flex-start;
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       box-shadow: none;
-      height: auto;
+      max-height: 2em;
       width: auto;
+      padding: 0.75em 0 0 0;
       background-color: var(--body-bckg-colour);
-      }
-    
+     
+    }
+
     .navbar a {
       font-size: 1em;
       color: var(--linkcolour-unv);
@@ -641,14 +702,14 @@ dd {
     }
 
     #navlist li {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding-top: 0;
+      padding: 3em 0.5em 0 0.5em;  
   }
 
+  .navbar a {
+    padding-top: 0;
+  }
 
-  .navbar li:first-child a {
+  #navlist li:first-child a {
       margin-top: 0;
   }
 
@@ -688,10 +749,17 @@ dd {
   .main-text {
     grid-column: 2 / 12;
     grid-row: 2 / 3;
+    padding: 1em 2em;
   }
 
   footer {
     margin-top: 1em;
+  }
+
+  .footer-info {
+    flex: 1;
+    justify-content: space-evenly;
+    min-width: 80%;
   }
 
   
