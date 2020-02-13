@@ -580,12 +580,14 @@ a.animate-underline:hover:before, a.animate-underline:focus:before {
 #logo {
   display: flex;
   width: 83.33%;
-  height: max-content;
+  height: 6em;
   margin: 0.75em 0 0.25em auto;
   background-image: url('./Assets/Images/EF_logo_copper_pen.svg');
   background-image: url('./Assets/Images/EF_logo_copper_pen.png');
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: right;
+  margin-right: 3em;
 }
 
 /* #logo img {
@@ -681,6 +683,7 @@ dd {
       background-image: url('./Assets/Images/EF_logo_copper_pen.png');
       background-size: contain;
       background-repeat: no-repeat;
+      background-position: left;
     }
 
     /* #logo img {
