@@ -673,9 +673,10 @@ dd {
       width: 12em;
       height: 6em;
       margin: 0.75em 0.5em 1em 0.5em;
-      background-image: url('/Assets/Images/EF_logo_copper_pen.svg');
-      background-image: url('/Assets/Images/EF_logo_copper_pen.png');
+      background-image: url('./Assets/Images/EF_logo_copper_pen.svg');
+      background-image: url('./Assets/Images/EF_logo_copper_pen.png');
       background-size: contain;
+      background-repeat: no-repeat;
     }
 
     /* #logo img {
