@@ -580,15 +580,19 @@ a.animate-underline:hover:before, a.animate-underline:focus:before {
 #logo {
   display: flex;
   width: 83.33%;
-  height: auto;
+  height: max-content;
   margin: 0.75em 0 0.25em auto;
+  background-image: url('./Assets/Images/EF_logo_copper_pen.svg');
+  background-image: url('./Assets/Images/EF_logo_copper_pen.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-#logo img {
+/* #logo img {
   width: 50%;
   height: auto;
   margin: 0 12% 0 auto;
-}
+} */
 
 /*---- HEADINGS ----*/
 
