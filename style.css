@@ -5,12 +5,18 @@
 /* For the CSS accordion with the checkbox hack: https://code-boxx.com/simple-responsive-accordion-pure-css/
 */
 
+/* For using <picture> to support svgs with fallbacks, see:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture
+https://www.sarasoueidan.com/blog/svg-picture/
+*/
+
 /*
 Example of multi-column footer with flexbox:
 https://webdesign.tutsplus.com/tutorials/how-to-build-a-responsive-multi-level-sticky-footer-with-flexbox--cms-33341
 */
 
 /* Possibly restyle lists when ::marker pseudoelement gains wider browser support. */
+
 /* Dropdown navigation menus and why it's best to avoid them in simple websites:
 https://www.nngroup.com/articles/drop-down-menus/
 */
@@ -301,7 +307,7 @@ padding: 15px;
   flex: 1;
   grid-column: 2 / 12;
   grid-row: 4 / 5;
-  height: fit-content;
+  height: fit-content;    /*Specify height to display correctly on Chrome*/
   margin: 5px;
   padding: 15px;
   background-color: var(--basic-txt-bckg, wheat);
@@ -423,43 +429,43 @@ footer p {
 
 /* Screen reader only */
 .scr-read-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
   }
   
-  /* MENU BUTTON - MOBILE */
+/* MENU BUTTON - MOBILE */
 
-   .menu-toggle {
-    display: inline-block;
-    padding: 0.25em 20px;
-    font-size: 2em;
-    color: #333;
-    text-decoration: none;
-  }
+  .menu-toggle {
+  display: inline-block;
+  padding: 0.25em 20px;
+  font-size: 2em;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: var(--accent-colour2, darkturquoise);
+}
   
-  .menu-toggle:hover,
-  .menu-toggle:focus {
-    color: var(--accent-colour2, darkturquoise);
-  }
   
-  
-  .navbar {
-    position: absolute;
-    display: none;
-    left: -200px;
-    top: 0;
-    height: 100%;
-      /* overflow-y: scroll;   ---In original example, this produces unsightly vertical scroll*/
-      overflow-x: visible;
-      transition: left 0.3s ease, box-shadow 0.3s ease;
-      z-index: 999;
-  }
+.navbar {
+  position: absolute;
+  display: none;
+  left: -200px;
+  top: 0;
+  height: 100%;
+  /* overflow-y: scroll;   ---In original example, this produces unsightly vertical scroll*/
+  overflow-x: visible;
+  transition: left 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
+}
   
 #navbar-close {
   font-size: 1.5em;
@@ -473,33 +479,33 @@ footer p {
  background-color: var(--accent-colour2, darkturquoise);
 }
 
-  #navlist {
-    list-style: none;
-    margin: 0;
-    padding: 2.5em 0 0;
-    /* Hide shadow w/ -8px while 'closed' */
-    -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
-       -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
-            box-shadow: -8px 0 8px rgba(0,0,0,.5);
-    min-height: 100%;
-    width: 70vw;
-    background-color: var(--sliding-menu-bckg, burlywood);
-  }
-  
-  .navbar a {
-    display: block;
-    padding: .75em 15px;
-    line-height: 1em;
-    font-family: var(--medium-text, Arial, Helvetica, sans-serif);
-    font-size: 1.125em;
-    color: var(--linkcolour-unv);
-    text-decoration: none;
-  }
-  
-  .navbar li:first-child a {
-    /* border-top: 1px solid #383838; */
-    margin-top: 1.5em;
-  }
+#navlist {
+  list-style: none;
+  margin: 0;
+  padding: 2.5em 0 0;
+  /* Hide shadow w/ -8px while 'closed' */
+  -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+      -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+          box-shadow: -8px 0 8px rgba(0,0,0,.5);
+  min-height: 100%;
+  width: 70vw;
+  background-color: var(--sliding-menu-bckg, burlywood);
+}
+
+.navbar a {
+  display: block;
+  padding: .75em 15px;
+  line-height: 1em;
+  font-family: var(--medium-text, Arial, Helvetica, sans-serif);
+  font-size: 1.125em;
+  color: var(--linkcolour-unv);
+  text-decoration: none;
+}
+
+.navbar li:first-child a {
+  /* border-top: 1px solid #383838; */
+  margin-top: 1.5em;
+}
 
 
   /*---- ANIMATE LINK UNDERLINE ----*/
@@ -534,68 +540,62 @@ a.animate-underline:hover:before, a.animate-underline:focus:before {
 	transform: scaleX(1);
 }
   
-  .navbar .menu-close {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  /* Acc. to Medium article, target: pseudo-class is semantically superior to using checkboxes to open/close menu.
-  */
-  .navbar:target,
-  .navbar[aria-expanded="true"] {
-    display: block;
-    left: 0;
-    outline: none;
-    -moz-box-shadow: 3px 0 12px rgba(0,0,0,.25);
-    -webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
-    box-shadow: 3px 0 12px rgba(0,0,0,.25);
-  }
-  
-  /*Clicking 'close' button OR anywhere in backdrop closes the sliding menu.*/
-  .navbar:target .menu-close,
-  .navbar[aria-expanded="true"] .menu-close {
-    z-index: 1001;
-  }
-  
-  .navbar:target ul,
-  .navbar[aria-expanded="true"] ul {
-    position: relative;
-    z-index: 1000;
-  }
-  
-  .navbar:target + .backdrop,
-  .navbar[aria-expanded="true"] + .backdrop{
-    position: absolute;
-    display: block;  
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 998;
-    background: var(--basic-txt-bckg-dk2, gainsboro);
-    cursor: default;
-  }
+.navbar .menu-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Acc. to Medium article, target: pseudo-class is semantically superior to using checkboxes to open/close menu.
+*/
+.navbar:target,
+.navbar[aria-expanded="true"] {
+  display: block;
+  left: 0;
+  outline: none;
+  -moz-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+  -webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+  box-shadow: 3px 0 12px rgba(0,0,0,.25);
+}
+
+/*Clicking 'close' button OR anywhere in backdrop closes the sliding menu.*/
+.navbar:target .menu-close,
+.navbar[aria-expanded="true"] .menu-close {
+  z-index: 1001;
+}
+
+.navbar:target ul,
+.navbar[aria-expanded="true"] ul {
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar:target + .backdrop,
+.navbar[aria-expanded="true"] + .backdrop{
+  position: absolute;
+  display: block;  
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  background: var(--basic-txt-bckg-dk2, gainsboro);
+  cursor: default;
+}
   
 /*--LOGO--*/
 #logo {
   display: flex;
   width: 83.33%;
-  height: 6em;
+  height: auto;
   margin: 0.75em 0 0.25em auto;
-  background-image: url('./Assets/Images/EF_logo_copper_pen.svg');
-  background-image: url('./Assets/Images/EF_logo_copper_pen.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right;
-  margin-right: 3em;
-}
+  }
 
-/* #logo img {
+#logo img {
   width: 50%;
   height: auto;
   margin: 0 12% 0 auto;
-} */
+}
 
 /*---- HEADINGS ----*/
 
@@ -616,14 +616,14 @@ h3 {
   margin: 0;
 }
 
-  @supports (position: fixed) {
-    .navbar,
-    .navbar:target + .backdrop,
-    .navbar[aria-expanded="true"] + .backdrop
-    {
-      position: fixed;
-    }
+@supports (position: fixed) {
+  .navbar,
+  .navbar:target + .backdrop,
+  .navbar[aria-expanded="true"] + .backdrop
+  {
+    position: fixed;
   }
+}
   
   /* ----- LISTS - EXCEPTING NAVBAR ----- */
 
@@ -664,133 +664,128 @@ dd {
 
   /* ------ MEDIA QUERIES: LARGE SCREENS ------  */
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
 
-        
-    .menu-toggle, .navbar .menu-close {
-      display: none;
-    }
+      
+  .menu-toggle, .navbar .menu-close {
+    display: none;
+  }
 
-    header {
-      display: flex;
-      flex-direction: row;
-    }
+  header {
+    display: flex;
+    flex-direction: row;
+  }
 
-    #logo {
-      width: 12em;
-      height: 6em;
-      margin: 0.75em 0.5em 1em 0.5em;
-      background-image: url('./Assets/Images/EF_logo_copper_pen.svg');
-      background-image: url('./Assets/Images/EF_logo_copper_pen.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left;
-    }
+  #logo {
+    width: 12em;
+    height: auto;
+    margin: 0.75em 0.5em 1em 0.5em;
+  }
 
-    /* #logo img {
-      width: 12em;
-      height: auto;
-      margin: 0 auto;
-    } */
+  #logo > img {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  /*DISPLAY MENU*/
+  .navbar {
+    position: relative;
+        left: auto;
+        top: auto;
+        height: auto;
+    display: block;
+  }
+  
+  #navlist {
+    display: flex;
+    align-items: flex-start;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    max-height: 2em;
+    width: auto;
+    padding: 0.75em 0 0 0;
+    background-color: var(--body-bckg-colour);
     
-   /*DISPLAY MENU*/
-    .navbar {
-      position: relative;
-          left: auto;
-          top: auto;
-          height: auto;
-      display: block;
-    }
-    
-    #navlist {
-      display: flex;
-      align-items: flex-start;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none;
-      max-height: 2em;
-      width: auto;
-      padding: 0.75em 0 0 0;
-      background-color: var(--body-bckg-colour);
-     
-    }
-
-    .navbar a {
-      font-size: 1em;
-      color: var(--linkcolour-unv);
-      border: 0 !important; 
-    }
-    
-    .navbar a:hover,
-    .navbar a:focus {
-      color: var(--linkcolour-unv);
-      font-size: 110%;
-    }
-
-    #navlist li {
-      padding: 3em 0.5em 0 0.5em;  
   }
 
   .navbar a {
-    padding-top: 0;
+    font-size: 1em;
+    color: var(--linkcolour-unv);
+    border: 0 !important; 
+  }
+  
+  .navbar a:hover,
+  .navbar a:focus {
+    color: var(--linkcolour-unv);
+    font-size: 110%;
   }
 
-  #navlist li:first-child a {
-      margin-top: 0;
-  }
+  #navlist li {
+    padding: 3em 0.5em 0 0.5em;  
+}
 
-  /*--- MAIN STYLING FOR LARGE SCREENS ---*/
+.navbar a {
+  padding-top: 0;
+}
 
-  #sidebar {
-    grid-column: 12 / 13;
-    grid-row: 1 / 3;
-    background-color: var(--body-bckg-colour);
-  }
-  
-  
-  main {
-    flex: 1;
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 75px auto;
-  }
-  
-  main > div {
-    margin: 5px;
-    padding: 20px;
-  }
-  
-  .main-left-t {
-    grid-column: 2 / 8;
-    grid-row: 1 / 2;
-    
-  }
-  
-  .main-right-t {
-    grid-column: 8 / 12;
-    grid-row: 1 / 2;
-  }
-  
-  .main-text {
-    grid-column: 2 / 12;
-    grid-row: 2 / 3;
-    padding: 1em 2em;
-  }
+#navlist li:first-child a {
+    margin-top: 0;
+}
 
-  footer {
-    margin-top: 1em;
-  }
+/*--- MAIN STYLING FOR LARGE SCREENS ---*/
 
-  .footer-info {
-    flex: 1;
-    justify-content: space-evenly;
-    min-width: 80%;
-  }
+#sidebar {
+  grid-column: 12 / 13;
+  grid-row: 1 / 3;
+  background-color: var(--body-bckg-colour);
+}
 
+
+main {
+  flex: 1;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 75px auto;
+}
+
+main > div {
+  margin: 5px;
+  padding: 20px;
+}
+
+.main-left-t {
+  grid-column: 2 / 8;
+  grid-row: 1 / 2;
   
-  h1 {
-    margin: 10px 40px auto 20px;
-  }
+}
+
+.main-right-t {
+  grid-column: 8 / 12;
+  grid-row: 1 / 2;
+}
+
+.main-text {
+  grid-column: 2 / 12;
+  grid-row: 2 / 3;
+  padding: 1em 2em;
+}
+
+footer {
+  margin-top: 1em;
+}
+
+.footer-info {
+  flex: 1;
+  justify-content: space-evenly;
+  min-width: 80%;
+}
+
+
+h1 {
+  margin: 10px 40px auto 20px;
+}
 
 }
