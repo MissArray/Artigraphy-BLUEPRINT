@@ -301,6 +301,7 @@ padding: 15px;
   flex: 1;
   grid-column: 2 / 12;
   grid-row: 4 / 5;
+  height: fit-content;
   margin: 5px;
   padding: 15px;
   background-color: var(--basic-txt-bckg, wheat);
