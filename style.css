@@ -491,7 +491,7 @@ footer p {
  background-color: var(--accent-colour2, darkturquoise);
 }
 
-#navbar-close img {
+#X-button {
   width: 2em;
   height: auto;
 }
