@@ -22,6 +22,10 @@ https://www.nngroup.com/articles/drop-down-menus/
 */
 
 /*
+Icon fonts didn't load on Android; replaced by PNG icons.
+*/
+
+/*
 TYPE SCALE: Major Second 1.125
 running text: 1em
 navbar links: 1.125em
@@ -31,7 +35,7 @@ h3 {font-size: 1.424em;}
 h4 {font-size: 1.266em;}
 h5 {font-size: 1.125em;}
 h6 {font-size: 0.889em;}
-small, .text_small {font-size: 0.79em;}
+small, .text_small {font-size: 0.889em;}
 */
 
 
@@ -68,7 +72,7 @@ small, .text_small {font-size: 0.79em;}
   --h4-font-size: 1.266em;
   --h5-font-size: 1.125em;
   --h6-font-size: 0.889em;
-  --small-text: 0.79em;
+  --small-text: 0.889em;
 }
 
 @font-face {
@@ -93,26 +97,6 @@ small, .text_small {font-size: 0.79em;}
   local('Raleway-SemiBold'),
   url('Assets/Fonts/Raleway-SemiBold.ttf'),
   format('truetype');
-}
-
-@font-face {
-  font-family: 'Segoe';
-  src:
-  local('Segoe MDL2 Assets'),
-  url('Assets/Fonts/segmdl2.ttf'),
-  format('truetype');
-}
-
-@font-face {
-  font-family: 'IcoMoon-Free';
-  src:
-  local(IcoMoon-Free),
-  url('Assets/Fonts/IcoMoon-Free.ttf'),
-  format('truetype');
-}
-
-.icon-font {
-  font-family: 'Segoe MDL2 Assets', Arial, sans-serif;
 }
 
 .social-icon {
@@ -276,14 +260,18 @@ padding: 15px;
   top: -0.3em;
   padding: 5px 6px;
   border-radius: 5px 0;
-  font-family: 'Segoe MDL2 Assets';
   background-color: var(--basic-txt-bckg-dk1, lightgray);
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
-  -webkit-transform: rotate(-180deg);
-  -moz-transform: rotate(-180deg);
-  -o-transform: rotate(-180deg);
-  transform: rotate(-180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.acc-item-arrow > img {
+  width: 1.125em;
+  height: auto;
 }
 
 .acc-item-arrow:hover, .acc-item-arrow:active {
@@ -376,7 +364,7 @@ footer {
 }
 
 .footer-h1 {
-  font-size: var(--h6-font-size);
+  font-size: var(--h5-font-size);
   text-align: left;
   padding-left: 1.6em;
 }
@@ -408,11 +396,13 @@ footer p {
 }
 
 #QR-code {
-  padding: 0 0.6em;
+  padding: 0 0.6em 0 0.4em;
   text-align: left;
 }
 
 #QR-img {
+  width: 8em;
+  height: auto;
   vertical-align: top;
   padding-left: 0.6em;  
   float: right;
@@ -460,15 +450,21 @@ footer p {
 
   .menu-toggle {
   display: inline-block;
-  padding: 0.25em 20px;
-  font-size: 2em;
-  color: #333;
+  padding: 0.75em 20px;
   text-decoration: none;
 }
 
-.menu-toggle:hover,
-.menu-toggle:focus {
-  color: var(--accent-colour2, darkturquoise);
+.menu-toggle  img {
+  width: 2.4em;
+  height: auto;
+  padding: 0.35em;
+  border-radius: 5px 0;
+  background-color: var(--basic-txt-bckg-lgt1, antiquewhite);
+}
+
+.menu-toggle img:hover,
+.menu-toggle img:focus {
+  background-color: var(--accent-colour2, darkturquoise);
 }
   
   
@@ -485,7 +481,6 @@ footer p {
 }
   
 #navbar-close {
-  font-size: 1.5em;
   background-color: var(--bckg-colour-darker2, lightsalmon);
   border-radius: 50%;
   padding: 0.4em 0.5em;
@@ -494,6 +489,11 @@ footer p {
 
 #navbar-close:hover, #navbar-close:focus {
  background-color: var(--accent-colour2, darkturquoise);
+}
+
+#navbar-close img {
+  width: 2em;
+  height: auto;
 }
 
 #navlist {
@@ -790,6 +790,7 @@ main > div {
   padding: 1em 2em;
 }
 
+/*--FOOTER - LARGE SCREENS--*/
 footer {
   margin-top: 1em;
 }
@@ -806,6 +807,15 @@ footer {
   min-width: 80%;
 }
 
+footer-h1 {
+  text-align: left;
+  padding: 0;
+}
+
+footer ul > li {
+  padding-left: 1em;
+  padding-bottom: 0;
+}
 
 h1 {
   margin: 10px 40px auto 20px;
