@@ -189,10 +189,41 @@ padding: 15px;
   flex: 1;            /* Add to keep footer to bottom of page*/
   grid-column: 2 / 12;
   grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
   background-color: var(--basic-txt-bckg, wheat);
   font-family: var(--bodytext, Arial, Helvetica, sans-serif);
   color: var(--basic-txt-colour, darkslategray);
   border-radius: 15px 0;
+}
+
+.main-text p {
+  margin: 0.5em 0;
+}
+
+/*--TESTIMONIALS--*/
+
+#testimonials-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 70vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+.testimonials-img {
+  width: max-content;
+  height: auto;
+  margin: 1em;
+  border: 1px solid #C6C7AE;
+}
+
+#workshop-feedback {
+  justify-self: center;
+  width: 80%;
+  border: 1px solid #C6C7AE;
+  margin: 2em 3em 1em 3em;
 }
 
 /*--- ACCORDION LIST ---*/
@@ -603,16 +634,18 @@ a.animate-underline:hover:before, a.animate-underline:focus:before {
 /*--LOGO--*/
 #logo {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   width: 83.33%;
   height: auto;
-  margin: 0.75em 0 0.25em auto;
+  margin: 0.75em 10vw 0.25em auto;
   }
 
 #logo img {
-  width: 50%;
+  width: 30vw;
   height: auto;
   margin: 0 12% 0 auto;
-}
+  }
 
 /*---- HEADINGS ----*/
 
@@ -693,16 +726,19 @@ dd {
     flex-direction: row;
   }
 
+/*--LOGO - LARGE SCREENS--*/
+
   #logo {
     width: 12em;
     height: auto;
-    margin: 0.75em 0.5em 1em 0.5em;
+    margin: 0.5em 2em 2em 0.5em;
   }
 
-  #logo > img {
-    width: 90%;
+  #logo img {
+    width: 10em;
     height: auto;
     margin: 0 auto;
+    vertical-align: middle;
   }
   
   /*DISPLAY MENU*/
@@ -788,6 +824,17 @@ main > div {
   grid-column: 2 / 12;
   grid-row: 2 / 3;
   padding: 1em 2em;
+}
+
+/*--TESTIMONIALS - LARGE SCREENS--*/
+
+#testimonials-container {
+  width: 70vw;
+}
+
+#workshop-feedback {
+  justify-self: center;
+  width: 80%;
 }
 
 /*--FOOTER - LARGE SCREENS--*/
