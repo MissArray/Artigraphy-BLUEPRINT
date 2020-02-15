@@ -215,16 +215,16 @@ padding: 15px;
 .testimonials-img {
   width: max-content;
   height: auto;
-  margin: 1em;
+  margin: 0.5em;
   border: 1px solid #C6C7AE;
 }
 
 #workshop-feedback {
   justify-self: center;
-  width: 80%;
   border: 1px solid #C6C7AE;
-  margin: 2em 3em 1em 3em;
+  margin: 2em 0.5em;
 }
+
 
 /*--- ACCORDION LIST ---*/
 /* Originally tried using the 'content' property for the up/down arrow; however, screen-readers don't pick up the 'content' property at all, hence the span-within-the-label solution*/
@@ -381,8 +381,6 @@ td {
 }
 
 
-
-
 /*---FOOTER---*/
 
 footer {
@@ -404,7 +402,7 @@ footer {
   width: 1.5em;
   height: auto;
   background-color: #ECB19A;
-  padding: 0.25em 0.3em;
+  padding: 0.25em 0.35em;
   border-radius: 5px 0;
 }
 
@@ -843,7 +841,13 @@ main > div {
 #workshop-feedback {
   justify-self: center;
   width: 80%;
+  margin: 2em 3em 1em 3em;
 }
+
+.testimonials-img {
+  margin: 1em;
+}
+
 
 /*--FOOTER - LARGE SCREENS--*/
 footer {
