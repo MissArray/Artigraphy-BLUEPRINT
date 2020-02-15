@@ -343,7 +343,7 @@ table caption {
   font-size: var(--h3-font-size);
   margin-bottom: 1em;
   padding: 15px;
-  background-color: var(--bckg-colour-darker1, #ece5b6);
+  background-color: var(--bckg-colour-darker1, salmon);
   border-radius: 15px 0;
 }
 
@@ -400,6 +400,14 @@ footer {
   padding-left: 1.6em;
 }
 
+#back-to-top img {
+  width: 1.5em;
+  height: auto;
+  background-color: #ECB19A;
+  padding: 0.25em 0.3em;
+  border-radius: 5px 0;
+}
+
 footer p {
   text-align: center;
 }
@@ -446,7 +454,7 @@ footer p {
 
 #footer-copyright {
   font-size: var(--small-text);
-  background-color: var(--bckg-colour-darker1);
+  background-color: var(--bckg-colour-darker1, salmon);
   border-radius: 15px 0;
   padding: 0 15px;
   margin-top: 0;
