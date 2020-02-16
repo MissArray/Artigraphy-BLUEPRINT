@@ -213,13 +213,14 @@ padding: 15px;
 }
 
 .testimonials-img {
-  width: max-content;
+  max-width: 90%;
   height: auto;
   margin: 0.5em;
   border: 1px solid #C6C7AE;
 }
 
 #workshop-feedback {
+  max-width: 90%;
   justify-self: center;
   border: 1px solid #C6C7AE;
   margin: 2em 0.5em;
