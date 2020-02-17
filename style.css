@@ -62,7 +62,7 @@ small, .text_small {font-size: 0.889em;}
   --sliding-menu-bckg: #e4906f;     /*tint of Pantone #de754c*/
   /*COLOURS - TEXT*/
   --linkcolour-unv: #1f1812;     /*shade of cocoabrown #35281e*/
-  --basic-txt-colour: #1f1812;  /*shade of cocoabrown #35281e*/
+  --basic-txt-colour: #1f1812;  /*shade of cocoabrown #35281e  | on body bckg: WCAGAAA: 16.61:1 | on copper bckg: WCGAAA: 8.02:1 |  on selection-highlight: WCAGAAA: 12.83:1*/
   /*TEXT SIZES*/
   --bodytext-size: 1em;
   --navbar-link-size: 1.125em;
@@ -117,6 +117,7 @@ body {
   font-size: calc(12px + 0.4vw);
   background-color: var(--body-bckg-colour);
  }
+
 
 /*--HIGHLIGHT SELECTED TEXT--*/
 body ::selection {
@@ -563,6 +564,9 @@ footer p {
   margin-top: 1.5em;
 }
 
+.navbar a:visited {
+  color: #8F47B3;   /*Crayola medium violet  |  WCAG AA: 5.34:1*/
+}
 
   /*---- ANIMATE LINK UNDERLINE ----*/
   /* Add the 2nd class .animate-underline to the respective links */
@@ -854,6 +858,10 @@ main > div {
 /*--FOOTER - LARGE SCREENS--*/
 footer {
   margin-top: 1em;
+}
+
+footer a:visited {
+  color: #4b2d72;       /*WCAG AA: 5:1*/
 }
 
 #QR-img {
