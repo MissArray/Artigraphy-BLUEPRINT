@@ -59,6 +59,7 @@ small, .text_small {font-size: 0.889em;}
   --basic-txt-bckg-dk2: 	rgba(204, 205, 184, 0.918); /*Reduced opacity of shade of basic-txt-bckg #CCCDB8;*/
   --basic-txt-bckg-lgt1: 	#EBECDC;
   --basic-txt-bckg-lgt2: 	#E8E9D7;
+  --section-bckg-grey: #dcddc6;
   --sliding-menu-bckg: #e4906f;     /*tint of Pantone #de754c*/
   /*COLOURS - TEXT*/
   --linkcolour-unv: #1f1812;     /*shade of cocoabrown #35281e*/
@@ -268,7 +269,7 @@ padding: 15px;
 }
 
 .accordion-item-input:checked ~ .accordion-item-text {
-	background-color: var(--basic-txt-bckg-dk1, gainsboro);
+	background-color: var(--basic-txt-bckg-dk1, lightgrey);
 	padding: 15px;
 	max-height: 1000px;
   padding-top: 1em;
@@ -675,6 +676,12 @@ h2 {
 h3 {
   font-family: var(--medium-text, Arial, Helvetica, sans-serif);
   font-size: var(--h3-font-size);
+  margin: 0.5em 0;
+}
+
+h4 {
+  font-family: var(--medium-text, Arial, Helvetica, sans-serif);
+  font-size: var(--h4-font-size);
   margin: 0;
 }
 
@@ -722,6 +729,12 @@ dd {
   margin-bottom: 0.3rem;
 }
 
+.section-list {
+  background-color: var(--section-bckg-grey, #dcddc6);
+  padding: 0 1em;
+  border-radius: 15px 0;
+  margin: 0.5em 0;
+}
 
 
   /* ------ MEDIA QUERIES: LARGE SCREENS ------  */
