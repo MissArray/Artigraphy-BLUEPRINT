@@ -3,10 +3,14 @@ The final version of my editorial website, coded from scratch.
 
 ## -- UNDER CONSTRUCTION -- 
 
+## The production URL:
+The GitHub URL takes you to the beta version of the website. To visit the released website go to:
+https://www.englishfinish.co.uk
+
 ### The background
 Well over a decade ago, I decided to create a website to advertise my services as a copy editor and content editor. At the time, coding and CSS seemed intimidatingly mystical, so I used Kompozer, an open-source WYSIWYG editor. The result was a serviceable enough website sitting atop a skein of overbloated, machine-generated code. As for the design; well, the layout fell into place reasonably enough, but the colour scheme was idiosyncratic, rather than appropriate for the audience I wanted to attract.
 
-Through the excellent Founders and Coders course I completed in 2018, I discovered and fell in love with web design. Although this wasn't a focal part of the course, it did introduce me to the many fascinating aspects of UX design. 
+Through the excellent Founders and Coders https://www.foundersandcoders.com/ course I completed in 2018, I discovered and fell in love with web design. Although this wasn't a focal part of the course, it did introduce me to the many fascinating aspects of UX design. 
 
 Following that course, I explored every aspect of web design in greater depth and took my CSS and HTML5 skills to the next level. 
 
