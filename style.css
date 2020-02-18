@@ -61,8 +61,9 @@ small, .text_small {font-size: 0.889em;}
   --basic-txt-bckg-lgt2: 	#E8E9D7;
   --section-bckg-grey: #dcddc6;
   --sliding-menu-bckg: #e4906f;     /*tint of Pantone #de754c*/
+  /*COLOURS - LINKS*/
+  --linkcolour-unv: #6F3A26;     /*shade of Pantone #de754c*/
   /*COLOURS - TEXT*/
-  --linkcolour-unv: #1f1812;     /*shade of cocoabrown #35281e*/
   --basic-txt-colour: #1f1812;  /*shade of cocoabrown #35281e  | on body bckg: WCAGAAA: 16.61:1 | on copper bckg: WCGAAA: 8.02:1 |  on selection-highlight: WCAGAAA: 12.83:1*/
   /*TEXT SIZES*/
   --bodytext-size: 1em;
@@ -168,6 +169,20 @@ main > div {
 section {
 margin: 5px;
 padding: 15px;
+}
+
+section a {
+  color: var(--linkcolour-unv, #6F3A26);
+  text-decoration: none;
+  border-bottom: 1px #de754c dotted;
+  padding: 0 1px;
+}
+
+section a:hover, section a:active {
+  background-color: #9cebe0;
+  padding: 2px 4px;
+  border-bottom: none;
+  border-radius: 5px 0;
 }
 
 .main-left-t {
@@ -381,6 +396,26 @@ td {
 
 .blank-row > td {
   background-color: var(--basic-txt-bckg-dk1, lightgray);
+}
+
+#table-comp-tasks {
+  text-align: center;
+}
+
+#table-comp-tasks tr {
+  text-align: center;
+}
+
+#table-comp-tasks th {
+  text-align: center;
+}
+
+#table-comp-tasks th:first-child {
+  text-align: left;
+}
+
+#table-comp-tasks td:first-child {
+  text-align: left;
 }
 
 
@@ -698,6 +733,7 @@ h4 {
 
 .plain-list {
   list-style-type: none;
+  margin: 0.5em;
 }
 
 /*Adjust bullet size and colour*/
@@ -731,11 +767,18 @@ dd {
 
 .section-list {
   background-color: var(--section-bckg-grey, #dcddc6);
-  padding: 0 1em;
+  padding: 0.5em 1.5em;
   border-radius: 15px 0;
   margin: 0.5em 0;
 }
 
+.section-list p {
+  padding-left: 0;
+}
+
+.section-list .plain-list {
+  padding-left: 0.5em;
+}
 
   /* ------ MEDIA QUERIES: LARGE SCREENS ------  */
 
@@ -802,6 +845,7 @@ dd {
 
   #navlist li {
     padding: 3em 0.5em 0 0.5em;  
+    text-align: center;
 }
 
 .navbar a {
@@ -901,6 +945,16 @@ footer ul > li {
 
 h1 {
   margin: 10px 40px auto 20px;
+}
+
+/*LISTS - LARGE SCREENS*/
+
+.section-list p {
+  padding-left: 1em;
+}
+
+.section-list .plain-list {
+  padding-left: 1.5em;
 }
 
 }
