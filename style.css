@@ -462,7 +462,7 @@ footer p {
   display: flex;
   justify-content: space-between;
   text-decoration: none;
-  color: var(--linkcolour-unv, darkslategray);
+  color: var(--linkcolour-unv, #6F3A26);
   padding: 0.5em 0.4em;
 }
 
@@ -540,7 +540,7 @@ footer p {
 
 .menu-toggle img:hover,
 .menu-toggle img:focus {
-  background-color: var(--accent-colour2, darkturquoise);
+  background-color: var(--accent-colour2, lightseagreen);
 }
   
   
@@ -564,7 +564,7 @@ footer p {
 }
 
 #navbar-close:hover, #navbar-close:focus {
- background-color: var(--accent-colour2, darkturquoise);
+ background-color: var(--accent-colour2, lightseagreen);
 }
 
 #X-button {
@@ -587,11 +587,11 @@ footer p {
 
 .navbar a {
   display: block;
-  padding: .75em 15px;
-  line-height: 1em;
+  padding: 0.5em 0.75em;
+  line-height: 1.125em;
   font-family: var(--medium-text, Arial, Helvetica, sans-serif);
   font-size: 1.125em;
-  color: var(--linkcolour-unv);
+  color: var(--basic-txt-colour, darkslategray);
   text-decoration: none;
 }
 
@@ -602,6 +602,14 @@ footer p {
 
 .navbar a:visited {
   color: #8F47B3;   /*Crayola medium violet  |  WCAG AA: 5.34:1*/
+}
+
+/*HIGHLIGHT THE CURRENT PAGE IN THE NAVBAR*/
+
+.active-page {
+  color: var(--linkcolour-unv, #6F3A26);
+  background-color: var(--accent-colour2, lightseagreen);
+  border-radius: 0;
 }
 
   /*---- ANIMATE LINK UNDERLINE ----*/
@@ -809,7 +817,7 @@ dd {
     vertical-align: middle;
   }
   
-  /*DISPLAY MENU*/
+  /*NAVBAR FOR LARGE SCREENS*/
   .navbar {
     position: relative;
         left: auto;
@@ -833,14 +841,20 @@ dd {
 
   .navbar a {
     font-size: 1em;
-    color: var(--linkcolour-unv);
+    color: var(--linkcolour-unv, #6F3A26);
     border: 0 !important; 
   }
   
   .navbar a:hover,
   .navbar a:focus {
-    color: var(--linkcolour-unv);
+    color: var(--linkcolour-unv, #6F3A26);
     font-size: 110%;
+  }
+
+  .active-page {
+    color: var(--linkcolour-unv, #6F3A26);
+    background-color: var(--basic-txt-bckg-lgt1, antiquewhite);
+    border-radius: 5px 0;
   }
 
   #navlist li {
@@ -848,9 +862,6 @@ dd {
     text-align: center;
 }
 
-.navbar a {
-  padding-top: 0;
-}
 
 #navlist li:first-child a {
     margin-top: 0;
