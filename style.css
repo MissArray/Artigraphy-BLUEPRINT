@@ -765,6 +765,18 @@ h4 {
   color: var( --basic-txt-colour, darkslategray);
 }
 
+.nested-list {
+  list-style-type: none;
+  margin: 0.5em;
+}
+
+.nested-list li::before {
+  content: '•';
+  font-size: 1.5em;
+  vertical-align: middle;
+  line-height: 0.5em;
+}
+
 dt {
   font-weight: 500;
 }
