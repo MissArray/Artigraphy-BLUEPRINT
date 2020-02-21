@@ -131,6 +131,7 @@ header, footer {
   width: 100vw;
 }
 
+
 header {
   display: flex;
   height: max-content;
@@ -445,6 +446,10 @@ footer {
   margin: 0.5em auto;
 }
 
+#back-to-top img:hover, #back-to-top img:focus {
+  background-color: var(--bckg-colour-darker1);
+}
+
 footer p {
   text-align: center;
 }
@@ -472,7 +477,7 @@ footer p {
 }
 
 .footer-ul a:hover, .footer-ul a:focus {
-  background-color: var(--accent-colour1, turquoise);
+  background-color: var(--accent-colour1, darkturquoise);
   padding: 0.5em 0.4em;
   border-radius: 5px 0;
 }
@@ -561,7 +566,7 @@ footer p {
   transition: left 0.3s ease, box-shadow 0.3s ease;
   z-index: 999;
 }
-  
+
 #navbar-close {
   background-color: var(--bckg-colour-darker2, lightsalmon);
   border-radius: 50%;
@@ -750,6 +755,11 @@ h4 {
   margin: 0.5em;
 }
 
+/*Negative text-indent to flush list content left*/
+.plain-list li {
+  text-indent: -1.1em;
+}
+
 /*Adjust bullet size and colour*/
 
 .plain-list li::before {
@@ -764,11 +774,26 @@ h4 {
 }
 
 .plain-list li:nth-child(even) {
-  color: var(--list-marker-colour-even);
+  color: var(--list-marker-colour-even, darkturquoise);
 }
 
 .plain-list span {
   color: var( --basic-txt-colour, darkslategray);
+}
+
+/*Simulate list with custom bullet and negative text-indent to flush text left*/
+.mock-li {
+  text-indent: -0.8em;
+}
+
+.mock-li-odd {
+  color: var(--list-marker-colour-odd, turquoise);
+  font-size:1em; 
+}
+
+.mock-li-even {
+  color: var(--list-marker-colour-even, darkturquoise);
+  font-size:1em; 
 }
 
 .nested-list {
@@ -778,7 +803,7 @@ h4 {
 
 .nested-list li::before {
   content: '•';
-  font-size: 1.5em;
+  font-size: 1.602em;
   vertical-align: middle;
   line-height: 0.5em;
 }
@@ -805,6 +830,24 @@ dd {
 .section-list .plain-list {
   padding-left: 0.5em;
 }
+
+
+/*---ANIMATIONS---*/
+
+
+/*Animate targeted element and restore when redirection is complete*/
+
+#contact_EF:target {
+  animation: temp-target-highlight 2.5s ease-in-out;
+}
+
+@keyframes temp-target-highlight {
+  50% {
+    color: var(--list-marker-colour-even, darkturquoise);
+  }
+}
+  
+
 
   /* ------ MEDIA QUERIES: LARGE SCREENS ------  */
 
