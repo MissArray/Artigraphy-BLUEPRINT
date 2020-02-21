@@ -833,18 +833,26 @@ dd {
 }
 
 
-/*---ANIMATIONS---*/
+/*---ANIMATIONS EXCEPT NAVBAR---*/
 
 
 /*Animate targeted element and restore when redirection is complete*/
 
+#contact_EF {
+  padding: 0;
+  border-bottom: 3px var(--bckg-colour-darker2, salmon) solid;
+}
+
 #contact_EF:target {
-  animation: temp-target-highlight 2.5s ease-in-out;
+  animation: temp-target-highlight 2.5s linear;
 }
 
 @keyframes temp-target-highlight {
   50% {
-    color: var(--list-marker-colour-even, darkturquoise);
+    border-bottom-color: var(--accent-colour1, turquoise);
+  }
+  100% {
+    border-bottom-color: var(--bckg-colour-darker2, salmon);
   }
 }
   
