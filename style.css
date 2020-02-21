@@ -458,16 +458,22 @@ footer p {
   padding-bottom: 0.25em;
 }
 
+/*Adding a null border to the element's default state and the same padding to both the default and the hover/focus/active states prevents the jumpy side-effect of animations*/
+
 .footer-ul a {
   display: flex;
   justify-content: space-between;
   text-decoration: none;
   color: var(--linkcolour-unv, #6F3A26);
   padding: 0.5em 0.4em;
+  background-color: var(--bckg-colour-darker2, lightsalmon);
+  border-width: 0;
+  border-radius: 5px 0;
 }
 
 .footer-ul a:hover, .footer-ul a:focus {
   background-color: var(--accent-colour1, turquoise);
+  padding: 0.5em 0.4em;
   border-radius: 5px 0;
 }
 
@@ -857,10 +863,11 @@ dd {
     border: 0 !important; 
   }
   
+  /*Using transform+scale to increasing font size apparently prevents browser repaints and is therefore smoother.*/
   .navbar a:hover,
   .navbar a:focus {
     color: var(--linkcolour-unv, #6F3A26);
-    font-size: 110%;
+    transform: scale(110%, 110%);
   }
 
   .active-page {
