@@ -176,7 +176,7 @@ section a {
   color: var(--linkcolour-unv, #6F3A26);
   text-decoration: none;
   border-bottom: 1px #de754c dotted;
-  padding: 0 1px;
+  padding: 2px 4px;
 }
 
 section a:hover, section a:active {
