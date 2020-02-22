@@ -356,6 +356,7 @@ section a:hover, section a:active {
 
 table {
   margin: 1em auto;
+  text-align: center;
 }
 
 table caption {
@@ -390,6 +391,11 @@ tr:nth-child(odd):not(:first-child) {
 
 td {
   padding: 8px 16px 8px 24px;
+  min-width: max-content;
+}
+
+td a {
+  padding-left: 0;
 }
 
 .blank-row {
@@ -416,8 +422,12 @@ td {
   text-align: left;
 }
 
-#table-comp-tasks td:first-child {
+.td-text-left {
   text-align: left;
+}
+
+#table-comp-tasks td {
+  text-align: center;
 }
 
 
@@ -789,12 +799,12 @@ h4 {
 
 .mock-li-odd {
   color: var(--list-marker-colour-odd, turquoise);
-  font-size:1em; 
+  font-size: 0.95rem; 
 }
 
 .mock-li-even {
   color: var(--list-marker-colour-even, darkturquoise);
-  font-size:1em; 
+  font-size: 0.95rem; 
 }
 
 .nested-list {
@@ -1037,6 +1047,10 @@ h1 {
 
 .section-list .plain-list {
   padding-left: 1.5em;
+}
+
+.mock-li-odd, .mock-li-even {
+  font-size:1em; 
 }
 
 }
