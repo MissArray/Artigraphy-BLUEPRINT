@@ -842,6 +842,17 @@ dd {
   padding-left: 0.5em;
 }
 
+/*FORMS*/
+#form-container {
+  width: 90%;
+  height: 70vh;
+}
+
+#form-h3 {
+  background-color: var(--basic-txt-bckg-dk2, gainsboro);
+  border-radius: 15px 0;
+  padding: 15px;
+}
 
 /*---ANIMATIONS EXCEPT NAVBAR---*/
 

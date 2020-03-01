@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <!--The booking form should only be accessible via a link sent to a client.-->
-    <meta name="robots" content="noindex">
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
@@ -45,7 +43,7 @@
      
       <ul id='navlist'>
         <li>
-          <a href='index.html' class='animate-underline'>Welcome</a>
+          <a href='index.html' class='active-page' class='animate-underline'>Welcome</a>
         </li>
         <li>
           <a href='editing.html' target='_blank' class='animate-underline'>Editing</a>
@@ -57,7 +55,7 @@
           <a href='testimonials.html' target='blank' class='animate-underline'>Testimonials</a>
         </li>
         <li>
-          <a href='bookings.html' target='blank' class='active-page' class='animate-underline'>Book a slot</a>
+          <a href='bookings.html' target='blank' class='animate-underline'>Book a slot</a>
         </li>
         <li>
           <a href='FAQs.html' target='_blank' class='animate-underline'>FAQs</a>
@@ -81,27 +79,123 @@
   <main>      
     <div id='sidebar'></div>        
     <div class='main-left-t'>
-      <h2>Book a service</h2></div>
+      <h2>Welcome to English Finish</h2></div>
     <div class='main-right-t'></div>
-
     <section class='main-text'>
-      <h3>How to make a booking</h3>
+      <h3>Copy editing or proofreading?</h3>
       <p> 
-        First, have a look at the <a href='/terms-conditions.html'>terms &amp; conditions</a>.
-        <br><br>
-        Next, please fill in and submit the form below; you should get a confirmation message right away. If you <i>don&rsquo;t</i> receive a confirmation message, you can either try re-sending the form or <a href='#contact_EF'>contact us</a>.
-        <br><br>
-        Before you submit the form, please double-check that all the details in the form match what we have arranged by e-mail. If you need to change any of those details (e.g. the start date), please contact us first.          
+While there is an overlap between the two, the terms are not synonymous. When you submit a manuscript for publication it is first copy edited, then proofread. In the process, the copy editor will overhaul your manuscript so that the proofreader can run the final check and eliminate any remaining errors before your work is sent to the printer. 
+
+Find out more about the copy editing and proofreading services offered by English Finish to decide which service you need.
       </p>
-
-      <h3 id='form-h3'>English Finish &ndash; Agreement of service</h3>
-
-      <div id='form-container'>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchgahdbYFNfSE-os3IC9h_j8esZxYE4EcG97w8UkmurvT5Bw/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-      </div>
-      
+      <ul class='plain-list'>
+        <li>
+          <span>This</span>
+        </li>
+        <li>
+          <span>That</span>
+        </li>
+        <li>
+          <span>The other</span>
+        </li>
+      </ul>
+      <p>
+        A different type of list, with headings/titles
+      </p>
+      <dl>
+          <dt>Title/subheading</dt>
+          <dd>Long description</dd>
+          <dt>Title 1/subheading</dt>
+          <dd>Long description 1</dd>
+      </dl>
     </section>
+
+      <ul class='accordion-wrapper'>
+      <li class='accordion-item'>
+      <input id='faq1' class='accordion-item-input' name='accordion' type='checkbox'/>
+        <label for='faq1' class='accordion-item-heading'>Item 1<span class='acc-item-arrow'>
+          <img src='./Assets/Images/arrow_up_Segoe_Assets.png' alt='downward arrow icon'>
+        </span>
+        </label>
+        <p class='accordion-item-text'>
+          Some content
+    </p>
+      </li>
+    </ul>
     
+    <section class='table-wrapper'>
+      <table>
+        <caption>Rates &amp; Fees </caption>	
+        <tbody>		
+          <tr>
+            <th scope='col'>Manuscript length (word count)</th>
+            <th scope='col'>Basic / Basic Plus</th>
+            <th scope='col'>Comprehensive / Comprehensive Plus</th>
+          </tr>
+          
+          <tr>
+            <td >4000&ndash;6000</td>
+            <td>&pound;400 &frasl; &pound;450</td>
+            <td>&pound;450 &frasl; &pound;500</td>
+          </tr>
+          
+          <tr>
+            <td>6001&ndash;8000</td>
+            <td>&pound;450 &frasl; &pound;500</td>
+            <td>&pound;500 &frasl; &pound;550</td>
+          </tr>
+          
+          <tr>
+            <td>8001&ndash;10000</td>
+            <td>&pound;500 &frasl; &pound;550</td>
+            <td>&pound;550 &frasl; &pound;600</td>
+          </tr>
+          
+          <tr>
+            <td>10001&ndash;12000</td>
+            <td>&pound;550 &frasl; &pound;600</td>
+            <td>&pound;650 &frasl; &pound;700</td>
+          </tr>
+          
+          <tr>
+            <td>12001&ndash;14000</td>
+            <td>&pound;650 &frasl; &pound700</td>
+            <td>&pound;750 &frasl; &pound;800</td>
+          </tr>
+          
+          <tr>
+            <td>over 14000</td>
+            <td>Please contact us</td>
+            <td>Please contact us</td>
+          </tr>
+          
+          <tr id='tr-divider' class='blank-row'>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+
+          <tr>
+            <td id='workshops'><span style='font-weight: 600'>Workshops</span></td>
+            <td>From &pound;60 an hour</td>
+            <td>More details</td>
+          </tr>
+
+          <tr class='blank-row'>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+
+          <tr>
+            <td><span style='font-weight: 500'>Proofreading</span></td>
+            <td>From &pound;20 an hour</td>
+            <td>Contact us for details</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </section>
   </main>
 
   <footer>
