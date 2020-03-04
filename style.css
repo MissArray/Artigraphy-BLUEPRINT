@@ -172,6 +172,7 @@ margin: 5px;
 padding: 15px;
 }
 
+/*GENERAL LINK STYLE*/
 section a {
   color: var(--linkcolour-unv, #6F3A26);
   text-decoration: none;
@@ -761,6 +762,8 @@ h4 {
   
   /* ----- LISTS - EXCEPTING NAVBAR ----- */
 
+/*UNORDERED LIST*/
+
 .plain-list {
   list-style-type: none;
   margin: 0.5em;
@@ -791,6 +794,40 @@ h4 {
 .plain-list span {
   color: var( --basic-txt-colour, darkslategray);
 }
+
+/*ORDERED LIST*/
+
+.plain-o-list {
+  list-style-type: none;
+  counter-reset: li;
+  margin: 0.5em;
+}
+
+.plain-o-list li {
+  counter-increment: li;
+  
+}
+
+.plain-o-list li::before {
+  content: counter(li, lower-alpha) '.';
+  color: #00aaaa;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.5em;
+}
+
+.plain-o-list span {
+  font-family: var(--bodytext);
+}
+
+.accordion-item a {
+  color: var(--linkcolour-unv, #6F3A26);
+  text-decoration: none;
+  padding: 2px 4px;
+  border-bottom: 1px #de754c dotted;
+  border-radius: 5px 0;
+}
+
 
 /*Simulate list with custom bullet and negative text-indent to flush text left*/
 .mock-li {
