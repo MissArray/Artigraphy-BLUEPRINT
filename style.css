@@ -249,13 +249,18 @@ section a:hover, section a:active {
 
 /*--- ACCORDION LIST ---*/
 /* Originally tried using the 'content' property for the up/down arrow; however, screen-readers don't pick up the 'content' property at all, hence the span-within-the-label solution*/
-.accordion-wrapper {
+
+.accordion-container {
+  margin: 0;
+  padding: 0;
+}
+.accordion-item-wrapper {
   flex: 1;
   grid-column: 2 / 12;
   grid-row: 3 / 4;
   list-style: none;   /* none outside*/
-  margin: 5px;
-  padding: 15px;
+  margin: 0.25em 0;
+  padding: 1em 0;
   background-color: var(--basic-txt-bckg, wheat);
   font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
   color: var(--basic-txt-colour, darkslategray);
@@ -269,10 +274,10 @@ section a:hover, section a:active {
   cursor: pointer;
 }
 
-.accordion-item {
+/* .accordion-item {
   padding: 0;
-  margin: 0;
- }
+  margin: 0 0 1.5em 0;
+ } */
 
 /*Hide the checkbox*/
 .accordion-item-input {
@@ -443,7 +448,7 @@ footer {
   background-color: var(--bckg-colour-darker2, lightsalmon);
 }
 
-.footer-h1 {
+.footer-h3 {
   font-size: var(--h5-font-size);
   text-align: left;
   padding-left: 1.6em;
@@ -1073,9 +1078,9 @@ footer a:visited {
   min-width: 80%;
 }
 
-footer-h1 {
+.footer-h3 {
   text-align: left;
-  padding: 0;
+  padding-left: 2.5em;
 }
 
 footer ul > li {
@@ -1099,6 +1104,12 @@ h1 {
 
 .mock-li-odd, .mock-li-even {
   font-size:1em; 
+}
+
+/*ACCORDION - LARGE SCREENS*/
+
+.accordion-container {
+  margin: 0 1em;
 }
 
 }
