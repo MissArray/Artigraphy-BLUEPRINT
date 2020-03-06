@@ -258,7 +258,6 @@ section a:hover, section a:active {
   flex: 1;
   grid-column: 2 / 12;
   grid-row: 3 / 4;
-  list-style: none;   /* none outside*/
   margin: 0.25em 0;
   padding: 1em 0;
   background-color: var(--basic-txt-bckg, wheat);
@@ -272,12 +271,8 @@ section a:hover, section a:active {
   position: relative;
   font-size: 1.266em;
   cursor: pointer;
+ 
 }
-
-/* .accordion-item {
-  padding: 0;
-  margin: 0 0 1.5em 0;
- } */
 
 /*Hide the checkbox*/
 .accordion-item-input {
@@ -285,7 +280,7 @@ section a:hover, section a:active {
 	clip: rect(0 0 0 0);
 	width: 1px;
 	height: 1px;
-	margin: -1;
+	margin: 1em;
 	overflow: hidden;
 	position: absolute;
 	left: -9999px;
@@ -293,9 +288,8 @@ section a:hover, section a:active {
 
 .accordion-item-input:checked ~ .accordion-item-text {
 	background-color: var(--basic-txt-bckg-dk1, lightgrey);
-	padding: 15px;
+	padding: 1em;
 	max-height: 1000px;
-  padding-top: 1em;
   margin: 0.75em 0;
   border-radius: 15px 0;
 	-webkit-transition: max-height 0.15s ease-in, margin 0.15s ease-in, padding 0.15s ease-in;
