@@ -258,20 +258,19 @@ section a:hover, section a:active {
   flex: 1;
   grid-column: 2 / 12;
   grid-row: 3 / 4;
-  margin: 0.25em 0;
-  padding: 1em 0;
-  background-color: var(--basic-txt-bckg, wheat);
+  margin: 0.5em 0;
   font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
   color: var(--basic-txt-colour, darkslategray);
   border-radius: 15px 0;
+  padding: 1em;
 }
 
-.accordion-item-heading {
+.accordion-item-label {
   display: block;
   position: relative;
-  font-size: 1.266em;
+  font-size: var(--h5-font-size);
   cursor: pointer;
- 
+  padding-bottom: 1.1em;
 }
 
 /*Hide the checkbox*/
@@ -281,37 +280,36 @@ section a:hover, section a:active {
 	width: 1px;
 	height: 1px;
 	margin: 1em;
-	overflow: hidden;
+	/* overflow-x: hidden; */
 	position: absolute;
 	left: -9999px;
 }
 
 .accordion-item-input:checked ~ .accordion-item-text {
-	background-color: var(--basic-txt-bckg-dk1, lightgrey);
-	padding: 1em;
 	max-height: 1000px;
-  margin: 0.75em 0;
+  margin: 1em 0;
+  -webkit-transition: max-height 0.15s ease-in, margin 0.15s ease-in, padding 0.15s ease-in;
+  transition: max-height 0.15s ease-in, margin 0.15s ease-in, padding 0.15s ease-in;
+  background-color: var(--basic-txt-bckg-dk1, lightgrey);
+  padding: 0.5em 1em;
   border-radius: 15px 0;
-	-webkit-transition: max-height 0.15s ease-in, margin 0.15s ease-in, padding 0.15s ease-in;
-	transition: max-height 0.15s ease-in, margin 0.15s ease-in, padding 0.15s ease-in;
 }
 
-/* Match accordion-item-headings only when they follow and are siblings of an accordion-item-input that is checked.*/
+/* Match accordion-item-labels only when they follow and are siblings of an accordion-item-input that is checked.*/
 
-.accordion-item-input:checked ~ .accordion-item-heading > .acc-item-arrow {
+.accordion-item-input:checked ~ .accordion-item-label > .acc-item-arrow {
 	-webkit-transform: rotate(0);
 	  -ms-transform: rotate(0);
-	   transform: rotate(0);
+     transform: rotate(0);
 }
 
 .acc-item-arrow {
   display: block;
   position: absolute;
   right: 0;
-  top: -0.3em;
   padding: 5px 6px;
   border-radius: 5px 0;
-  background-color: var(--basic-txt-bckg-dk1, lightgray);
+  background-color: var(--basic-txt-bckg-dk1, lightgrey);
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
   -webkit-transform: rotate(180deg);
