@@ -5,9 +5,15 @@
 /* For the CSS accordion with the checkbox hack: https://code-boxx.com/simple-responsive-accordion-pure-css/
 */
 
+/* For hiding elements accessibly, see:
+https://webaim.org/techniques/css/invisiblecontent/*/
 /* For using <picture> to support svgs with fallbacks, see:
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture
 https://www.sarasoueidan.com/blog/svg-picture/
+*/
+
+/* For using aria-label to hide label text/instruction, see:
+https://www.w3.org/WAI/tutorials/forms/labels/#hidden
 */
 
 /*
@@ -213,8 +219,9 @@ section a:hover, section a:active {
   flex-direction: column;
   background-color: var(--basic-txt-bckg, wheat);
   font-family: var(--bodytext, Arial, Helvetica, sans-serif);
-  color: var(--basic-txt-colour, darkslategray);
+  color: var(--basic-txt-colour, #1f1812);
   border-radius: 15px 0;
+  color: var(--basic-txt-colour, #1f1812);
 }
 
 .main-text p {
@@ -258,11 +265,13 @@ section a:hover, section a:active {
   flex: 1;
   grid-column: 2 / 12;
   grid-row: 3 / 4;
+  padding-bottom: 0.25em;
   margin: 0.5em 0;
   font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
-  color: var(--basic-txt-colour, darkslategray);
+  color: var(--basic-txt-colour, #1f1812);
+  background-color: var(--basic-txt-bckg-dk2, gainsboro);
   border-radius: 15px 0;
-  padding: 1em;
+  line-height: var(--h5-font-size, 1.25em);
 }
 
 .accordion-item-label {
@@ -270,7 +279,8 @@ section a:hover, section a:active {
   position: relative;
   font-size: var(--h5-font-size);
   cursor: pointer;
-  padding-bottom: 1.1em;
+  padding: 1.1em;
+  margin: 0.5em 1em 2em 1em;
 }
 
 /*Hide the checkbox*/
@@ -286,7 +296,7 @@ section a:hover, section a:active {
 
 .accordion-item-input:checked ~ .accordion-item-text {
 	max-height: 1000px;
-  margin: 1em 0;
+  margin: 1em 0.75em;
   -webkit-transition: max-height 0.15s ease-in, margin 0.15s ease-in, padding 0.15s ease-in;
   transition: max-height 0.15s ease-in, margin 0.15s ease-in, padding 0.15s ease-in;
   background-color: var(--basic-txt-bckg-dk1, lightgrey);
@@ -300,6 +310,13 @@ section a:hover, section a:active {
 	-webkit-transform: rotate(0);
 	  -ms-transform: rotate(0);
      transform: rotate(0);
+     background-color: var(--list-marker-colour-odd, turquoise);
+     margin-top: 0.5em;
+     margin-bottom: 0.5em;
+}
+
+.accordion-item-input:checked ~ .accordion-item-text {
+  margin-top: 1.5em;
 }
 
 .acc-item-arrow {
@@ -307,6 +324,7 @@ section a:hover, section a:active {
   position: absolute;
   right: 0;
   padding: 5px 6px;
+  margin-top: 0.5em;
   border-radius: 5px 0;
   background-color: var(--basic-txt-bckg-dk1, lightgrey);
   -webkit-transition: -webkit-transform 0.2s ease;
@@ -346,7 +364,7 @@ section a:hover, section a:active {
   margin: 5px;
   padding: 15px;
   background-color: var(--basic-txt-bckg, wheat);
-  color: var(--basic-txt-colour, darkslategray);
+  color: var(--basic-txt-colour,#1f1812);
   border-radius: 15px 0;
   overflow: auto;
 }
@@ -610,7 +628,7 @@ footer p {
   line-height: 1.125em;
   font-family: var(--medium-text, Arial, Helvetica, sans-serif);
   font-size: 1.125em;
-  color: var(--basic-txt-colour, darkslategray);
+  color: var(--basic-txt-colour,#1f1812);
   text-decoration: none;
 }
 
@@ -788,7 +806,7 @@ h4 {
 }
 
 .plain-list span {
-  color: var( --basic-txt-colour, darkslategray);
+  color: var( --basic-txt-colour, #1f1812);
 }
 
 /*ORDERED LIST*/
@@ -1101,6 +1119,15 @@ h1 {
 
 .accordion-container {
   margin: 0 1em;
+}
+
+.accordion-item-input:checked ~ .accordion-item-text {
+  margin: 1em;
+}
+
+.accordion-item-label {
+  padding: 1.1em;
+  margin: 1em 1em 2em 1em;
 }
 
 }
