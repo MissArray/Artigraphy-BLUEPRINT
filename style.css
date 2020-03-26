@@ -182,7 +182,7 @@ padding: 15px;
 section a {
   color: var(--linkcolour-unv, #6F3A26);
   text-decoration: none;
-  padding: 2px 4px;
+  padding: 1px 4px;
   border-bottom: 1px #de754c dotted;
   border-radius: 5px 0;
 }
@@ -225,7 +225,19 @@ section a:hover, section a:active {
 }
 
 .main-text p {
-  margin: 0.5em 0;
+  margin: 0 0 1em 0;
+}
+
+.main-text-quote {
+  margin: 0.5em 2em;
+  font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
+}
+
+#special-notice {
+  margin: 0.75em 1.5em;
+  padding: 0.5em 0.75em;
+  border-radius: 15px 0;
+  background-color: #fe8d80;    /*tint of Bittersweet #FE6F5E*/
 }
 
 /*--TESTIMONIALS--*/
@@ -751,6 +763,7 @@ h1 {
 h2 {
   font-family: var(--medium-text, Arial, Helvetica, sans-serif);
   font-size: var(--h2-font-size);
+  margin: 0.4em 0 0.20em 0;
 }
 
 h3 {
@@ -781,6 +794,7 @@ h4 {
 .plain-list {
   list-style-type: none;
   margin: 0.5em;
+  padding-left: 0.5em;
 }
 
 /*Negative text-indent to flush list content left*/
@@ -815,6 +829,7 @@ h4 {
   list-style-type: none;
   counter-reset: li;
   margin: 0.5em;
+  padding-left: 1em;
 }
 
 .plain-o-list li {
@@ -1047,6 +1062,11 @@ main > div {
   grid-column: 2 / 12;
   grid-row: 2 / 3;
   padding: 1em 2em;
+}
+
+#special-notice {
+  margin: 1em 3em;
+  padding: 0.75em 1em;
 }
 
 /*--TESTIMONIALS - LARGE SCREENS--*/
