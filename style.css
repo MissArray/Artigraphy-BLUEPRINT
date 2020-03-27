@@ -757,7 +757,7 @@ a.animate-underline:hover:before, a.animate-underline:focus:before {
 h1 {
   font-family: var(--semibold-text, Arial, Helvetica, sans-serif);
   font-size: var(--h1-font-size);
-  margin: 10px 9vw 10px auto;
+  margin: 0.4em 0 0.4em 0;
 }
 
 h2 {
@@ -1118,7 +1118,7 @@ footer ul > li {
 }
 
 h1 {
-  margin: 10px 40px auto 20px;
+  margin: 0.5em 1em 0.5em 0.4em;
 }
 
 /*LISTS - LARGE SCREENS*/
