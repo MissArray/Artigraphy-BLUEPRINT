@@ -982,7 +982,7 @@ dd {
     top: auto;
     height: auto;
     display: block;
-    margin-top: 1em;
+    /* margin-top: 1em; */
   }
   
   #navlist {
