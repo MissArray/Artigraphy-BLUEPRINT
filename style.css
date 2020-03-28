@@ -741,13 +741,13 @@ a.animate-underline:hover:before, a.animate-underline:focus:before {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 83.33%;
+  width: 85%;
   height: auto;
-  margin: 0.75em 10vw 0.25em auto;
+  margin: 0.5em 10vw 0.25em auto;
   }
 
 #logo img {
-  width: 30vw;
+  width: 45vw;
   height: auto;
   margin: 0 12% 0 auto;
   }
@@ -962,13 +962,13 @@ dd {
 /*--LOGO - LARGE SCREENS--*/
 
   #logo {
-    width: 12em;
+    width: 16em;
     height: auto;
-    margin: 0.5em 2em 2em 0.5em;
+    margin: 0.75em 2em auto 1.5em;
   }
 
   #logo img {
-    width: 10em;
+    width: 16em;
     height: auto;
     margin: 0 auto;
     vertical-align: middle;
@@ -977,10 +977,11 @@ dd {
   /*NAVBAR FOR LARGE SCREENS*/
   .navbar {
     position: relative;
-        left: auto;
-        top: auto;
-        height: auto;
+    left: auto;
+    top: auto;
+    height: auto;
     display: block;
+    margin-top: 1em;
   }
   
   #navlist {
@@ -1040,6 +1041,7 @@ main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 75px auto;
+  margin-top: 2.5em;
 }
 
 main > div {
