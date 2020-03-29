@@ -1,7 +1,8 @@
 # Artigraphy - Beta
 The final version of my editorial website, designed and coded from scratch.
 
-## -- UNDER CONSTRUCTION -- 
+## -- RELEASE VERSION -- 
+The release version went live on 29 March 2020 at (http://artigraphy.co.uk).
 
 ## The production URL:
 The [GitHub URL]( https://missarray.github.io/Artigraphy-BLUEPRINT/) takes you to the beta version of the website. To view the now decommissioned website go to:
@@ -20,7 +21,7 @@ Following that course, I explored every aspect of web design in greater depth an
 * To design the logo I used both Adobe Illustrator and Photoshop; the icons are images of specific glyphs from an icon font.
 
 ### Purpose
-The new Artigraphy website, which replaces English Finish, serves a double purpose: first, it advertises my services as a content editor in more modern, cleaner packaging; second, it demonstrates my love of web design, the technical skills I've been building - and which I mean to keep on building - and my ability to produce a simple but professional result.
+The new [Artigraphy website](http://artigraphy.co.uk), which replaces English Finish, serves a double purpose: first, it advertises my services as a content editor in more modern, cleaner packaging; second, it demonstrates my love of web design, the technical skills I've been building - and which I mean to keep on building - and my ability to produce a simple but professional result.
 
 ### Copyright
 The code is open-source: any solutions that appeal are up for grabs.
