@@ -1,35 +1,4 @@
-/* For effects, see https://tympanus.net/Tutorials/CreativeCSS3AnimationMenus/index2.html */
 
-/* For the CSS target: selector technique, see also: https://developer.mozilla.org/en-US/docs/Web/CSS/:target*/
-
-/* For the CSS accordion with the checkbox hack: https://code-boxx.com/simple-responsive-accordion-pure-css/
-*/
-
-/* For hiding elements accessibly, see:
-https://webaim.org/techniques/css/invisiblecontent/*/
-/* For using <picture> to support svgs with fallbacks, see:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture
-https://www.sarasoueidan.com/blog/svg-picture/
-*/
-
-/* For using aria-label to hide label text/instruction, see:
-https://www.w3.org/WAI/tutorials/forms/labels/#hidden
-*/
-
-/*
-Example of multi-column footer with flexbox:
-https://webdesign.tutsplus.com/tutorials/how-to-build-a-responsive-multi-level-sticky-footer-with-flexbox--cms-33341
-*/
-
-/* Possibly restyle lists when ::marker pseudoelement gains wider browser support. */
-
-/* Dropdown navigation menus and why it's best to avoid them in simple websites:
-https://www.nngroup.com/articles/drop-down-menus/
-*/
-
-/*
-Icon fonts didn't load on Android; replaced by PNG icons.
-*/
 
 /*
 TYPE SCALE: Major Second 1.125
@@ -56,8 +25,8 @@ small, .text_small {font-size: 0.889em;}
   /* #CA9171; */
   /*COLOURS - BACKGROUNDS*/
   --body-bckg-colour: 	#F8F9F8;
-  --bckg-colour-darker1: #e4906f;   /*tint of Pantone #de754c*/
-  --bckg-colour-darker2: #e79e81;   /*tint of Pantone #de754c*/
+  --bckg-colour-darker1: #ec9f78;  /* Pantone Tint of Apricot Initially: #e4906f; tint of Pantone #de754c*/
+  --bckg-colour-darker2: #ea956b;   /* Pantone Apricot; Initially: #e79e81 tint of Pantone #de754c*/
   --list-marker-colour-even: 	#30BFBF;  /*Crayola Maximum Blue Green*/
   --list-marker-colour-odd:  	#00CCCC;  /*Crayola Robin's Egg Blue*/
   --basic-txt-bckg: #e3e4cd;        /* tint of Pantone #c7ca9c*/
@@ -66,9 +35,10 @@ small, .text_small {font-size: 0.889em;}
   --basic-txt-bckg-lgt1: 	#EBECDC;
   --basic-txt-bckg-lgt2: 	#E8E9D7;
   --section-bckg-grey: #dcddc6;
-  --sliding-menu-bckg: #e4906f;     /*tint of Pantone #de754c*/
+  --sliding-menu-bckg: #eb9774;     /*tint of Pantone #de754c*/
   /*COLOURS - LINKS*/
-  --linkcolour-unv: #6F3A26;     /*shade of Pantone #de754c*/
+  --linkcolour-unv: #2a160e;     /*Pantone Coffee Bean*/
+  --linkcolour-vis: #3c0088;        /*Pantone Pigment Indigo*/
   /*COLOURS - TEXT*/
   --basic-txt-colour: #1f1812;  /*shade of cocoabrown #35281e  | on body bckg: WCAGAAA: 16.61:1 | on copper bckg: WCGAAA: 8.02:1 |  on selection-highlight: WCAGAAA: 12.83:1*/
   /*TEXT SIZES*/
@@ -237,7 +207,7 @@ section a:hover, section a:active {
   margin: 0.75em 1.5em;
   padding: 0.5em 0.75em;
   border-radius: 15px 0;
-  background-color: #fe8d80;    /*tint of Bittersweet #FE6F5E*/
+  background-color: #e3db7b;    /*Pantone Chenin*/
 }
 
 /*--TESTIMONIALS--*/
@@ -479,7 +449,7 @@ footer {
 #back-to-top img {
   width: 1.5em;
   height: auto;
-  background-color: #ECB19A;
+  background-color: #efad92;    /* Tint of Pantone Apricot*/
   padding: 0.25em 0.35em;
   border-radius: 5px 0;
   margin: 0.5em auto;
@@ -651,7 +621,7 @@ footer p {
 }
 
 .navbar a:visited {
-  color: #8F47B3;   /*Crayola medium violet  |  WCAG AA: 5.34:1*/
+  color: var(--linkcolour-vis, purple);  /*  WCAG AA: 5.95:1*/
 }
 
 /*HIGHLIGHT THE CURRENT PAGE IN THE NAVBAR*/
@@ -1095,7 +1065,7 @@ footer {
 }
 
 footer a:visited {
-  color: #4b2d72;       /*WCAG AA: 5:1*/
+  color: var(--linkcolour-vis, purple);       /*WCAG AA: 5:95*/
 }
 
 #QR-img {

@@ -6,7 +6,11 @@
 --- Pantone semolina #E2D0B3;
 --- shade #e6c8aa of Crayola almond #EED9C4; dairycream #edd2a4; raffia #ebc695; #d5bf8e; 
 --- tint #ddc6a0 of fawn #cfaf7b*/
-- LEFT H2 BOX BCKG: #7EDCF2  Pantone base turquoise Pantone Formula Guide Uncoated tint (#70D9F1)
+- LEFT H2 BOX BCKG: 
+tint/shade of Pantone Copper Coin
+TRY:
+#e98c65 tint of Pantone Hot Cinnamon
+#7EDCF2  Pantone base turquoise Pantone Formula Guide Uncoated tint (#70D9F1)
 - RIGHT H2 BOX BCKG: Pantone #9AE4F5 tint
 - ACCENT / LINKS ON HOVER/FOCUS: Pantone Formula Guide Uncoated 
 	#70D9F1 [base turquoise]
