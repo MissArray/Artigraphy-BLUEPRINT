@@ -82,6 +82,11 @@ small, .text_small {font-size: 0.889em;}
   vertical-align: middle;
 }
 
+.bold-teal {
+  font-weight: bold;
+  color: #00A693;
+}
+
 /*----- MOBILE FIRST ----*/
 
 body {
