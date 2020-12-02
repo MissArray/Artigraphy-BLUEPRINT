@@ -22,6 +22,9 @@ small, .text_small {font-size: 0.889em;}
   /*COLOURS - ACCENTS*/
   --accent-colour1: #4EDCC9;    /*base colour: Pantone #4EDCCA*/
   --accent-colour2: #71E3D3;    /*base colour: Pantone #4EDCCA*/
+  --accent-colour3: #85e0e0;    /*tint of Crayola Maximum Blue Green*/
+  --accent-colour4: #5dd6d6;    /*tint of Crayola Maximum Blue Green*/
+
   /* #CA9171; */
   /*COLOURS - BACKGROUNDS*/
   --body-bckg-colour: 	#F8F9F8;
@@ -240,6 +243,23 @@ section a:hover, section a:active {
   margin: 2em 0.5em;
 }
 
+.client-feedback-box2 {
+  width: 80%;
+  margin-bottom: 1em;
+  padding: 0.75em 1em;
+  background-color: var(--accent-colour3, lightseagreen);
+  font-weight: 500;
+  border-radius: 15px 0;
+}
+
+.client-feedback-box1 {
+  width: 80%;
+  margin-bottom: 1em;
+  padding: 0.75em 1em;
+  background-color: var(--accent-colour4, turquoise);
+  font-weight: 500;
+  border-radius: 15px 0;
+}
 
 /*--- ACCORDION LIST ---*/
 /* Originally tried using the 'content' property for the up/down arrow; however, screen-readers don't pick up the 'content' property at all, hence the span-within-the-label solution*/
