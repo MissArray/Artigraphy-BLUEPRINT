@@ -890,8 +890,9 @@ h4 {
 
 /*Simulate list with custom bullet and negative text-indent to flush text left*/
 .mock-li {
-  text-indent: -0.8em;
+ text-indent: -0.8em;
 }
+
 
 .mock-li-odd {
   color: var(--list-marker-colour-odd, turquoise);
@@ -901,6 +902,16 @@ h4 {
 .mock-li-even {
   color: var(--list-marker-colour-even, darkturquoise);
   font-size: 0.95rem; 
+}
+
+.mock-li-arrow-lf-lt {
+  color: var(--bckg-colour-darker1, lightsalmon);
+  font-size: 0.95rem;
+}
+
+.mock-li-arrow-lf-dk {
+  color: var(--bckg-colour-darker2, salmon);
+  font-size: 0.95rem;
 }
 
 .nested-list {
