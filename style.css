@@ -981,11 +981,11 @@ dd {
 
 #contact_ART {
   padding: 0;
-  border-bottom: 3px var(--bckg-colour-darker2, salmon) solid;
+  border-bottom: 4px var(--bckg-colour-darker2, salmon) solid;
 }
 
 #contact_ART:target {
-  animation: temp-target-highlight 2.5s linear;
+  animation: temp-target-highlight 3s linear;
 }
 
 @keyframes temp-target-highlight {
