@@ -261,6 +261,14 @@ section a:hover, section a:active {
   border-radius: 15px 0;
 }
 
+.client-feedback-box1 a:hover {
+  background-color: #eeaa89;
+}
+
+.client-feedback-box2 a:hover {
+  background-color: #eeaa89;
+}
+
 /*--- ACCORDION LIST ---*/
 /* Originally tried using the 'content' property for the up/down arrow; however, screen-readers don't pick up the 'content' property at all, hence the span-within-the-label solution*/
 
