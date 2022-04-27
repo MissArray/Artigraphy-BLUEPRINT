@@ -837,15 +837,17 @@ h4 {
 
 /*Negative text-indent to flush list content left*/
 .plain-list-alt li {
+  list-style-type: none;         /*remove automatic bullet*/
   text-indent: -1.1em;
 }
 
 /*Adjust bullet size and colour*/
 
 .plain-list-alt li::before {
-  content: '•';
-  font-size: 2.5em;
-  vertical-align: middle;
+  content: 'x';                 /*insert custom bullet*/
+  font-size: 1.2em;
+  font-weight: 800;
+  vertical-align:baseline;
   line-height: 0.5em;
 }
 
