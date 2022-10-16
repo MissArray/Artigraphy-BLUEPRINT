@@ -479,6 +479,10 @@ footer {
   padding-left: 1.6em;
 }
 
+#back-to-top {
+  margin: 0, auto;
+}
+
 #back-to-top img {
   width: 1.5em;
   height: auto;
@@ -496,50 +500,21 @@ footer p {
   text-align: center;
 }
 
-.footer-ul {
-  list-style-type: none;
-  font-size: var(--small-text);
-}
-
-.footer-ul li {
-  padding-bottom: 0.25em;
-}
-
 /*Adding a null border to the element's default state and the same padding to both the default and the hover/focus/active states prevents the jumpy side-effect of animations*/
 
-.footer-ul a {
-  display: flex;
-  justify-content: space-between;
-  text-decoration: none;
-  color: var(--linkcolour-unv, #6F3A26);
-  padding: 0.5em 0.4em;
-  background-color: var(--bckg-colour-darker2, lightsalmon);
-  border-width: 0;
-  border-radius: 5px 0;
-}
-
-.footer-ul a:hover, .footer-ul a:focus {
-  background-color: var(--accent-colour1, darkturquoise);
-  padding: 0.5em 0.4em;
-  border-radius: 5px 0;
-}
-
-#QR-code {
-  padding: 0 0.6em 0 0.4em;
-  text-align: left;
-}
-
-#QR-img {
-  width: 8em;
-  height: auto;
-  vertical-align: top;
-  padding-left: 0.6em;  
-  float: right;
-}
 
 .footer-info{
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  align-self: center;
+  align-items: center;
+}
+
+.footer-row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
 }
 
 #footer-copyright {
@@ -625,7 +600,7 @@ footer p {
   height: auto;
 }
 
-#navlist {
+/* #navlist {
   list-style: none;
   margin: 0;
   padding: 2.5em 0 0;
@@ -636,7 +611,7 @@ footer p {
   min-height: 100%;
   width: 70vw;
   background-color: var(--sliding-menu-bckg, burlywood);
-}
+} */
 
 .navbar a {
   display: block;
@@ -1040,7 +1015,7 @@ dd {
     /* margin-top: 1em; */
   }
   
-  #navlist {
+ /* #navlist {
     display: flex;
     align-items: flex-start;
     -webkit-box-shadow: none;
@@ -1050,8 +1025,7 @@ dd {
     width: auto;
     padding: 0.75em 0 0 0;
     background-color: var(--body-bckg-colour);
-    
-  }
+  }  */
 
   .navbar a {
     font-size: 1em;
@@ -1157,16 +1131,22 @@ footer a:visited {
   color: var(--linkcolour-vis, purple);       /*WCAG AA: 5:95*/
 }
 
-#QR-img {
+/* #QR-img {
   vertical-align: top;
   padding-left: 0.6em;  
   float: left;
-}
+} */
 
 .footer-info {
   flex: 1;
   justify-content: space-evenly;
   min-width: 80%;
+}
+
+.footer-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .footer-h3 {
